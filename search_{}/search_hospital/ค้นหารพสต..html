@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ค้นหารพสต.</title>
+    <!-- Favicon -->
+    <link rel="icon" href="../../favicon.ico" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+
+    <!-- Bootstrap Core Css -->
+    <link href="https://healthgate.hss.moph.go.th/public/templatebackend/assets/plugins/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+
+    <!-- Animate.css Css -->
+    <link href="https://healthgate.hss.moph.go.th/public/templatebackend/assets/plugins/animate-css/animate.css" rel="stylesheet" />
+
+    <!-- Font Awesome Css -->
+    <link href="https://healthgate.hss.moph.go.th/public/templatebackend/assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+
+    <!-- iCheck Css -->
+    <link href="https://healthgate.hss.moph.go.th/public/templatebackend/assets/plugins/iCheck/skins/flat/_all.css" rel="stylesheet" />
+
+    <!-- Switchery Css -->
+    <link href="https://healthgate.hss.moph.go.th/public/templatebackend/assets/plugins/switchery/dist/switchery.css" rel="stylesheet" />
+
+    <!-- Metis Menu Css -->
+    <link href="https://healthgate.hss.moph.go.th/public/templatebackend/assets/plugins/metisMenu/dist/metisMenu.css" rel="stylesheet" />
+
+    <!-- Pace Loader Css -->
+    <link href="https://healthgate.hss.moph.go.th/public/templatebackend/assets/plugins/pace/themes/white/pace-theme-flash.css" rel="stylesheet" />
+
+    <!-- Custom Css -->
+    <link href="https://healthgate.hss.moph.go.th/public/templatebackend/assets/css/style.css" rel="stylesheet" />
+
+    <!-- Jquery Datatables Css -->
+    <link href="https://healthgate.hss.moph.go.th/public/templatebackend/assets/plugins/DataTables/media/css/dataTables.bootstrap.css" rel="stylesheet" />
+
+    <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
+    <link href="https://healthgate.hss.moph.go.th/public/templatebackend/assets/css/themes/allthemes.css" rel="stylesheet" />
+    <style>
+        body{
+            font-family: 'Kanit', sans-serif;
+        }
+    </style>
+</head>
+<body style="background-color: white;">
+    <div class="all-content-wrapper">
+        <div class="col-lf-12">
+            <div class="page-body">
+                <div class="panel-default"><br><br><br>
+                    <div class="col-lg-2"></div>
+                    <div class="col-lg-8">
+                        <div class="form-group">
+                            <a href="https://healthgate.hss.moph.go.th"><button type="button" class="m-w-150 btn btn-raised btn-danger">ย้อนกลับหน้าเข้าสู่ระบบ</button></a>
+                        </div>
+                        <form action="https://healthgate.hss.moph.go.th/search/hospital" method="get">
+                        <div class="row"> 
+                            <div class="col-lg-4">
+                                <label for="">จังหวัด</label>
+                                <select class="form-control" name="search_province" id="search_province" required>
+                                    <option value="">กรุณาเลือกจังหวัด</option>
+                                                                        <option value="กรุงเทพมหานคร">กรุงเทพมหานคร</option>
+                                                                        <option value="สมุทรปราการ">สมุทรปราการ</option>
+                                                                        <option value="นนทบุรี">นนทบุรี</option>
+                                                                        <option value="ปทุมธานี">ปทุมธานี</option>
+                                                                        <option value="พระนครศรีอยุธยา">พระนครศรีอยุธยา</option>
+                                                                        <option value="อ่างทอง">อ่างทอง</option>
+                                                                        <option value="ลพบุรี">ลพบุรี</option>
+                                                                        <option value="สิงห์บุรี">สิงห์บุรี</option>
+                                                                        <option value="ชัยนาท">ชัยนาท</option>
+                                                                        <option value="สระบุรี">สระบุรี</option>
+                                                                        <option value="ชลบุรี">ชลบุรี</option>
+                                                                        <option value="ระยอง">ระยอง</option>
+                                                                        <option value="จันทบุรี">จันทบุรี</option>
+                                                                        <option value="ตราด">ตราด</option>
+                                                                        <option value="ฉะเชิงเทรา">ฉะเชิงเทรา</option>
+                                                                        <option value="ปราจีนบุรี">ปราจีนบุรี</option>
+                                                                        <option value="นครนายก">นครนายก</option>
+                                                                        <option value="สระแก้ว">สระแก้ว</option>
+                                                                        <option value="นครราชสีมา">นครราชสีมา</option>
+                                                                        <option value="บุรีรัมย์">บุรีรัมย์</option>
+                                                                        <option value="สุรินทร์">สุรินทร์</option>
+                                                                        <option value="ศรีสะเกษ">ศรีสะเกษ</option>
+                                                                        <option value="อุบลราชธานี">อุบลราชธานี</option>
+                                                                        <option value="ยโสธร">ยโสธร</option>
+                                                                        <option value="ชัยภูมิ">ชัยภูมิ</option>
+                                                                        <option value="อำนาจเจริญ">อำนาจเจริญ</option>
+                                                                        <option value="หนองบัวลำภู">หนองบัวลำภู</option>
+                                                                        <option value="ขอนแก่น">ขอนแก่น</option>
+                                                                        <option value="อุดรธานี">อุดรธานี</option>
+                                                                        <option value="เลย">เลย</option>
+                                                                        <option value="หนองคาย">หนองคาย</option>
+                                                                        <option value="มหาสารคาม">มหาสารคาม</option>
+                                                                        <option value="ร้อยเอ็ด">ร้อยเอ็ด</option>
+                                                                        <option value="กาฬสินธุ์">กาฬสินธุ์</option>
+                                                                        <option value="สกลนคร">สกลนคร</option>
+                                                                        <option value="นครพนม">นครพนม</option>
+                                                                        <option value="มุกดาหาร">มุกดาหาร</option>
+                                                                        <option value="เชียงใหม่">เชียงใหม่</option>
+                                                                        <option value="ลำพูน">ลำพูน</option>
+                                                                        <option value="ลำปาง">ลำปาง</option>
+                                                                        <option value="อุตรดิตถ์">อุตรดิตถ์</option>
+                                                                        <option value="แพร่">แพร่</option>
+                                                                        <option value="น่าน">น่าน</option>
+                                                                        <option value="พะเยา">พะเยา</option>
+                                                                        <option value="เชียงราย">เชียงราย</option>
+                                                                        <option value="แม่ฮ่องสอน">แม่ฮ่องสอน</option>
+                                                                        <option value="นครสวรรค์">นครสวรรค์</option>
+                                                                        <option value="อุทัยธานี">อุทัยธานี</option>
+                                                                        <option value="กำแพงเพชร">กำแพงเพชร</option>
+                                                                        <option value="ตาก">ตาก</option>
+                                                                        <option value="สุโขทัย">สุโขทัย</option>
+                                                                        <option value="พิษณุโลก">พิษณุโลก</option>
+                                                                        <option value="พิจิตร">พิจิตร</option>
+                                                                        <option value="เพชรบูรณ์">เพชรบูรณ์</option>
+                                                                        <option value="ราชบุรี">ราชบุรี</option>
+                                                                        <option value="กาญจนบุรี">กาญจนบุรี</option>
+                                                                        <option value="สุพรรณบุรี">สุพรรณบุรี</option>
+                                                                        <option value="นครปฐม">นครปฐม</option>
+                                                                        <option value="สมุทรสาคร">สมุทรสาคร</option>
+                                                                        <option value="สมุทรสงคราม">สมุทรสงคราม</option>
+                                                                        <option value="เพชรบุรี">เพชรบุรี</option>
+                                                                        <option value="ประจวบคีรีขันธ์">ประจวบคีรีขันธ์</option>
+                                                                        <option value="นครศรีธรรมราช">นครศรีธรรมราช</option>
+                                                                        <option value="กระบี่">กระบี่</option>
+                                                                        <option value="พังงา">พังงา</option>
+                                                                        <option value="ภูเก็ต">ภูเก็ต</option>
+                                                                        <option value="สุราษฎร์ธานี">สุราษฎร์ธานี</option>
+                                                                        <option value="ระนอง">ระนอง</option>
+                                                                        <option value="ชุมพร">ชุมพร</option>
+                                                                        <option value="สงขลา">สงขลา</option>
+                                                                        <option value="สตูล">สตูล</option>
+                                                                        <option value="ตรัง">ตรัง</option>
+                                                                        <option value="พัทลุง">พัทลุง</option>
+                                                                        <option value="ปัตตานี">ปัตตานี</option>
+                                                                        <option value="ยะลา">ยะลา</option>
+                                                                        <option value="นราธิวาส">นราธิวาส</option>
+                                                                        <option value="บึงกาฬ">บึงกาฬ</option>
+                                                                    </select>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row" style="text-align-last: center;">
+                        <button class="m-w-150 btn btn-raised btn-primary" type="submit">ค้นหา</button>
+                        </div>
+    </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Jquery Core Js -->
+    <script src="https://healthgate.hss.moph.go.th/public/templatebackend/assets/plugins/jquery/dist/jquery.min.js"></script>
+
+    <!-- Bootstrap Core Js -->
+    <script src="https://healthgate.hss.moph.go.th/public/templatebackend/assets/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Pace Loader Js -->
+    <script src="https://healthgate.hss.moph.go.th/public/templatebackend/assets/plugins/pace/pace.js"></script>
+
+    <!-- Screenfull Js -->
+    <script src="https://healthgate.hss.moph.go.th/public/templatebackend/assets/plugins/screenfull/src/screenfull.js"></script>
+
+    <!-- Metis Menu Js -->
+    <script src="https://healthgate.hss.moph.go.th/public/templatebackend/assets/plugins/metisMenu/dist/metisMenu.js"></script>
+
+    <!-- Jquery Slimscroll Js -->
+    <script src="https://healthgate.hss.moph.go.th/public/templatebackend/assets/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+
+    <!-- Switchery Js -->
+    <script src="https://healthgate.hss.moph.go.th/public/templatebackend/assets/plugins/switchery/dist/switchery.js"></script>
+
+    <!-- JQuery Datatables Js -->
+    <script src="https://healthgate.hss.moph.go.th/public/templatebackend/assets/plugins/DataTables/media/js/jquery.dataTables.js"></script>
+    <script src="https://healthgate.hss.moph.go.th/public/templatebackend/assets/plugins/DataTables/media/js/dataTables.bootstrap.js"></script>
+    <script src="https://healthgate.hss.moph.go.th/public/templatebackend/assets/plugins/DataTables/extensions/export/dataTables.buttons.min.js"></script>
+    <script src="https://healthgate.hss.moph.go.th/public/templatebackend/assets/plugins/DataTables/extensions/export/buttons.bootstrap.min.js"></script>
+    <script src="https://healthgate.hss.moph.go.th/public/templatebackend/assets/plugins/DataTables/extensions/export/buttons.flash.min.js"></script>
+    <script src="https://healthgate.hss.moph.go.th/public/templatebackend/assets/plugins/DataTables/extensions/export/jszip.min.js"></script>
+    <script src="https://healthgate.hss.moph.go.th/public/templatebackend/assets/plugins/DataTables/extensions/export/pdfmake.min.js"></script>
+    <script src="https://healthgate.hss.moph.go.th/public/templatebackend/assets/plugins/DataTables/extensions/export/vfs_fonts.js"></script>
+    <script src="https://healthgate.hss.moph.go.th/public/templatebackend/assets/plugins/DataTables/extensions/export/buttons.html5.min.js"></script>
+    <script src="https://healthgate.hss.moph.go.th/public/templatebackend/assets/plugins/DataTables/extensions/export/buttons.print.min.js"></script>
+
+    <!-- Custom Js -->
+    <script src="https://healthgate.hss.moph.go.th/public/templatebackend/assets/js/admin.js"></script>
+    <script src="https://healthgate.hss.moph.go.th/public/templatebackend/assets/js/pages/tables/jquery-datatables.js"></script>
+
+    <!-- Google Analytics Code -->
+    <script src="https://healthgate.hss.moph.go.th/public/templatebackend/assets/js/google-analytics.js"></script>
+</body>
+</html>
