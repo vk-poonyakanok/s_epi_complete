@@ -2,8 +2,8 @@ name: Automate Task with Google Cloud Service Account
 
 on:
   schedule:
-    #- cron: '0 16 * * *' # Runs at 16:00 UTC, which is 23:00 in Bangkok
-    - cron: '15 16 * * *' # Runs at 16:15 UTC, which is 23:15 in Bangkok
+    - cron: '0 16 * * *' # Runs at 16:00 UTC, which is 23:00 in Bangkok
+    #- cron: '15 16 * * *' # Runs at 16:15 UTC, which is 23:15 in Bangkok
 
 jobs:
   automate-task:
