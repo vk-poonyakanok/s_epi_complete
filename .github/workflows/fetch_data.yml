@@ -1,20 +1,32 @@
-name: Daily Data Fetch
+name: Automate Task with Google Cloud Service Account
 
 on:
   schedule:
-    - cron: '0 15 * * *' # Runs at 15:00 UTC, which is 22:00 in Bangkok
+    #- cron: '0 16 * * *' # Runs at 16:00 UTC, which is 23:00 in Bangkok
+    - cron: '15 16 * * *' # Runs at 16:15 UTC, which is 23:15 in Bangkok
 
 jobs:
-  fetch-and-update-data:
+  automate-task:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: '3.x'
-    - name: Install dependencies
-      run: pip install -r requirements.txt
-    - name: Run the script
-      run: python fetch_data.py
-    # Optional: Add steps to upload the data to a storage solution or database
+      - uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'
+
+      - name: Install dependencies
+        run: |
+          pip install google-api-python-client google-auth google-auth-httplib2 google-auth-oauthlib pandas requests
+
+      - name: Decode GCP Service Account Key
+        run: |
+          echo "${{ secrets.GCP_SA_KEY }}" | base64 -d > gcp_service_account.json
+        shell: bash
+
+      - name: Run Script
+        run: |
+          python fetch_data.py
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS: $PWD/gcp_service_account.json
