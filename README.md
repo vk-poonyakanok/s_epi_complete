@@ -1,7 +1,7 @@
 # VaxMap Thailand project
  
 ## Overview
-The `VaxMap Thailand project` aims to analyze and visualize the coverage of vaccines received by children aged 1 year in Thailand, as per the guidelines. This project will leverage data primarily from the Ministry of Public Health's Open Data platform to evaluate vaccination coverage, map hospital locations, and provide insights through an interactive dashboard.
+The `VaxMap Thailand` is the personal project that aims to analyze and visualize the coverage of vaccines received by children aged 1 year in Thailand, as per the guidelines which consists of BCG, HB1, DTP-HB3, OPV3, IPV and MMR1. This project will leverage data primarily from the Ministry of Public Health's Open Data platform to evaluate vaccination coverage, map hospital locations, and provide insights through an interactive dashboard.
 
 [The official dashboard for this data](https://hdcservice.moph.go.th/hdc/reports/report.php?cat_id=4df360514655f79f13901ef1181ca1c7&id=28dd2c7955ce926456240b2ff0100bde) was already done by Health Data Center (HDC) Service.
 
@@ -32,7 +32,7 @@ This project utilizes data by
 
 - To create an interactive dashboard for visualizing the data insights, aimed at both public health officials and the general public.
 
-## Technologies Used
+## Tools
 - Python and Jupyter Notebook for data analysis and preprocessing.
     - `s_epi_complete.ipynb` show data description and how to use public API to load data into pandas DataFrame.
     - Folder `search_{}` for web scraping (ETL) by gazpacho library.
