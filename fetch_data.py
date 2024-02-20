@@ -30,16 +30,31 @@ def fetch_data_and_save():
     s_epi_complete_data.to_csv('s_epi_complete_data.csv', index=False)
     print("Data fetching and saving complete.")
 
-def upload_to_drive(filename, folder_id):
+def upload_to_drive(filename, folder_id, file_id=None):
     service_account_file = os.getenv('GOOGLE_APPLICATION_CREDENTIALS')
     credentials = service_account.Credentials.from_service_account_file(service_account_file)
     service = build('drive', 'v3', credentials=credentials)
 
-    file_metadata = {'name': os.path.basename(filename), 'parents': [folder_id]}
     media = MediaFileUpload(filename, mimetype='text/csv')
-    file = service.files().create(body=file_metadata, media_body=media, fields='id').execute()
 
-    print(f"Uploaded {filename} to Google Drive with File ID: {file.get('id')}")
+    if file_id:
+        # Update the existing file
+        updated_file = service.files().update(
+            fileId=file_id,
+            media_body=media,
+            fields='id'
+        ).execute()
+        print(f"Updated {filename} in Google Drive with File ID: {updated_file.get('id')}")
+    else:
+        # Create a new file if no file_id is provided
+        file_metadata = {'name': os.path.basename(filename), 'parents': [folder_id]}
+        file = service.files().create(
+            body=file_metadata,
+            media_body=media,
+            fields='id'
+        ).execute()
+        print(f"Uploaded {filename} to Google Drive with File ID: {file.get('id')}")
+
 
 if __name__ == '__main__':
     fetch_data_and_save()
