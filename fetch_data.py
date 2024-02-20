@@ -58,5 +58,6 @@ def upload_to_drive(filename, folder_id, file_id=None):
 
 if __name__ == '__main__':
     fetch_data_and_save()
-    # Upload to Google Drive folder ID 1kUloOi3JWbV-ukH1OfpvN-S5lKt2_VND
-    upload_to_drive('s_epi_complete_data.csv', '1kUloOi3JWbV-ukH1OfpvN-S5lKt2_VND')
+    # Upload to Google Drive folder ID '1kUloOi3JWbV-ukH1OfpvN-S5lKt2_VND'
+    # Specify the existing file ID here to update the file ID '1BifCPJ1rxsw2bSt0uPODaGkUzNLer4eR' instead of uploading as new
+    upload_to_drive('s_epi_complete_data.csv', '1kUloOi3JWbV-ukH1OfpvN-S5lKt2_VND', '1BifCPJ1rxsw2bSt0uPODaGkUzNLer4eR')
