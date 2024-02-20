@@ -10,10 +10,10 @@ jobs:
   automate-task:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3 # Updated to v3 for Node.js 20 support
 
       - name: Set up Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v3 # Updated to v3 for Node.js 20 support
         with:
           python-version: '3.8'
 
