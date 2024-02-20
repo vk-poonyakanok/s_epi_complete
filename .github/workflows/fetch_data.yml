@@ -27,7 +27,6 @@ jobs:
         shell: bash
 
       - name: Run Script
-        run: |
-          python fetch_data.py
+        run: python fetch_data.py
         env:
-          GOOGLE_APPLICATION_CREDENTIALS: $PWD/gcp_service_account.json
+          GOOGLE_APPLICATION_CREDENTIALS: ${{ github.workspace }}/gcp_service_account.json
