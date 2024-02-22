@@ -1,18 +1,18 @@
-name: Automate Yearly data Refresh
+name: Automate Yearly Data Refresh
 
 on:
-  workflow_dispatch:  # This line allows manual triggering
+  workflow_dispatch: # This line allows manual triggering
   schedule:
-    - cron: '0 0 4 1 *' # This schedules the job to run at 00:00 UTC on January 4th every year
+    - cron: '0 0 4 1 *' # Schedules the job to run at 00:00 UTC on January 4th every year
 
-    jobs:
+jobs:
   automate-task:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3 # Updated to v3 for Node.js 20 support
 
       - name: Set up Python
-        uses: actions/setup-python@v3 # Updated to v3 for Node.js 20 support
+        uses: actions/setup-python@v3
         with:
           python-version: '3.8'
 
