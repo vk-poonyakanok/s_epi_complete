@@ -15,24 +15,27 @@ def fetch_data_and_save():
     headers = {"Content-Type": "application/json"}
     excluded_provinces = ['10', '28', '29', '59', '68', '69', '78', '79', '87', '88', '89']
     province_codes = [f"{i:02d}" for i in range(11, 97) if f"{i:02d}" not in excluded_provinces]
-    s_epi_complete_data = pd.DataFrame()
+    
+    s_epi_complete_data_all = pd.DataFrame()
 
-    for province_code in province_codes:
-        data = {
-            "tableName": "s_epi_complete",
-            "year": str(current_year_be),  # Use the current year in BE
-            "province": province_code,
-            "type": "json"
-        }
-        response = requests.post(url, headers=headers, data=json.dumps(data))
-        if response.status_code in [200, 201]:
-            temp_df = pd.json_normalize(response.json())
-            s_epi_complete_data = pd.concat([s_epi_complete_data, temp_df], ignore_index=True)
-        else:
-            print(f"Failed to retrieve data for province code {province_code}. Status code: {response.status_code}")
+    # Iterate through the years from 2557 to the last year (excluding the current year)
+    for year in range(2557, current_year_be):  # Exclude current year (If want to include the current year use current_year_be +1)
+        for province_code in province_codes:
+            data = {
+                "tableName": "s_epi_complete",
+                "year": str(year),
+                "province": province_code,
+                "type": "json"
+            }
+            response = requests.post(url, headers=headers, data=json.dumps(data))
+            if response.status_code in [200, 201]:
+                temp_df = pd.json_normalize(response.json())
+                s_epi_complete_data_all = pd.concat([s_epi_complete_data_all, temp_df], ignore_index=True)
+            else:
+                print(f"Failed to retrieve data for year {year}, province code {province_code}. Status code: {response.status_code}")
 
-    s_epi_complete_data.to_csv('s_epi_complete_data.csv', index=False)
-    print("Data fetching and saving complete.")
+    s_epi_complete_data_all.to_csv('s_epi_complete_data_all.csv', index=False)
+    print("Yearly data fetching and saving complete.")
 
 def upload_to_drive(filename, folder_id, file_id=None):
     service_account_file = os.getenv('GOOGLE_APPLICATION_CREDENTIALS')
@@ -59,9 +62,9 @@ def upload_to_drive(filename, folder_id, file_id=None):
         ).execute()
         print(f"Uploaded {filename} to Google Drive with File ID: {file.get('id')}")
 
-
 if __name__ == '__main__':
     fetch_data_and_save()
     # Upload to Google Drive folder ID '1kUloOi3JWbV-ukH1OfpvN-S5lKt2_VND'
-    # Specify the existing file ID here to update the file ID '1BifCPJ1rxsw2bSt0uPODaGkUzNLer4eR' instead of uploading as new
-    upload_to_drive('s_epi_complete_data.csv', '1kUloOi3JWbV-ukH1OfpvN-S5lKt2_VND', '1BifCPJ1rxsw2bSt0uPODaGkUzNLer4eR')
+    # Specify the existing file ID here to update the file ID '1XTktfgbtlNN4CnsM4BnQ758uwG06uT7y' instead of uploading as new
+    upload_to_drive('s_epi_complete_data.csv', '1kUloOi3JWbV-ukH1OfpvN-S5lKt2_VND', '1XTktfgbtlNN4CnsM4BnQ758uwG06uT7y')
+

@@ -1,12 +1,11 @@
-name: Automate Daily data fetch for current year with Google Cloud Service Account
+name: Automate Yearly data Refresh
 
 on:
   workflow_dispatch:  # This line allows manual triggering
   schedule:
-    - cron: '0 16 * * *' # Runs at 16:00 UTC, which is 23:00 in Bangkok
-    #- cron: '15 16 * * *' # Runs at 16:15 UTC, which is 23:15 in Bangkok
+    - cron: '0 0 4 1 *' # This schedules the job to run at 00:00 UTC on January 4th every year
 
-jobs:
+    jobs:
   automate-task:
     runs-on: ubuntu-latest
     steps:
@@ -27,6 +26,6 @@ jobs:
         shell: bash
 
       - name: Run Script
-        run: python fetch_data.py
+        run: python yearly_fetch_data.py
         env:
           GOOGLE_APPLICATION_CREDENTIALS: ${{ github.workspace }}/gcp_service_account.json
