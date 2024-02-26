@@ -47,100 +47,40 @@
           </columns>
         </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
         <_.fcp.ObjectModelEncapsulateLegacy.true...relation type='collection'>
-          <relation name='Pivot' type='pivot'>
-            <columns>
-              <column datatype='string' name='Pivot Field Names' />
-              <column datatype='integer' name='Pivot Field Values' />
+          <relation connection='cloudfile:googledrive-textscan.0xbletn0499xh219c44kn034pide' name='s_epi_complete_data.csv' table='[s_epi_complete_data#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='string' name='id' ordinal='0' />
+              <column datatype='string' name='hospcode' ordinal='1' />
+              <column datatype='string' name='areacode' ordinal='2' />
+              <column datatype='datetime' date-parse-format='yyyyMMddHHmm' name='date_com' ordinal='3' />
+              <column datatype='integer' name='b_year' ordinal='4' />
+              <column datatype='integer' name='target' ordinal='5' />
+              <column datatype='integer' name='result' ordinal='6' />
+              <column datatype='integer' name='target10' ordinal='7' />
+              <column datatype='integer' name='result10' ordinal='8' />
+              <column datatype='integer' name='target11' ordinal='9' />
+              <column datatype='integer' name='result11' ordinal='10' />
+              <column datatype='integer' name='target12' ordinal='11' />
+              <column datatype='integer' name='result12' ordinal='12' />
+              <column datatype='integer' name='target01' ordinal='13' />
+              <column datatype='integer' name='result01' ordinal='14' />
+              <column datatype='integer' name='target02' ordinal='15' />
+              <column datatype='integer' name='result02' ordinal='16' />
+              <column datatype='integer' name='target03' ordinal='17' />
+              <column datatype='integer' name='result03' ordinal='18' />
+              <column datatype='integer' name='target04' ordinal='19' />
+              <column datatype='integer' name='result04' ordinal='20' />
+              <column datatype='integer' name='target05' ordinal='21' />
+              <column datatype='integer' name='result05' ordinal='22' />
+              <column datatype='integer' name='target06' ordinal='23' />
+              <column datatype='integer' name='result06' ordinal='24' />
+              <column datatype='integer' name='target07' ordinal='25' />
+              <column datatype='integer' name='result07' ordinal='26' />
+              <column datatype='integer' name='target08' ordinal='27' />
+              <column datatype='integer' name='result08' ordinal='28' />
+              <column datatype='integer' name='target09' ordinal='29' />
+              <column datatype='integer' name='result09' ordinal='30' />
             </columns>
-            <tag name='Pivot Field Names'>
-              <value name='[Target01]' />
-              <value name='[Target02]' />
-              <value name='[Target03]' />
-              <value name='[Target04]' />
-              <value name='[Target05]' />
-              <value name='[Target06]' />
-              <value name='[Target07]' />
-              <value name='[Target08]' />
-              <value name='[Target09]' />
-              <value name='[Target10]' />
-              <value name='[Target11]' />
-              <value name='[Target12]' />
-              <value name='[Result01]' />
-              <value name='[Result02]' />
-              <value name='[Result03]' />
-              <value name='[Result04]' />
-              <value name='[Result05]' />
-              <value name='[Result06]' />
-              <value name='[Result07]' />
-              <value name='[Result08]' />
-              <value name='[Result09]' />
-              <value name='[Result10]' />
-              <value name='[Result11]' />
-              <value name='[Result12]' />
-            </tag>
-            <groups>
-              <group name='Pivot Field Values'>
-                <field name='[s_epi_complete_data.csv].[target01]' />
-                <field name='[s_epi_complete_data.csv].[target02]' />
-                <field name='[s_epi_complete_data.csv].[target03]' />
-                <field name='[s_epi_complete_data.csv].[target04]' />
-                <field name='[s_epi_complete_data.csv].[target05]' />
-                <field name='[s_epi_complete_data.csv].[target06]' />
-                <field name='[s_epi_complete_data.csv].[target07]' />
-                <field name='[s_epi_complete_data.csv].[target08]' />
-                <field name='[s_epi_complete_data.csv].[target09]' />
-                <field name='[s_epi_complete_data.csv].[target10]' />
-                <field name='[s_epi_complete_data.csv].[target11]' />
-                <field name='[s_epi_complete_data.csv].[target12]' />
-                <field name='[s_epi_complete_data.csv].[result01]' />
-                <field name='[s_epi_complete_data.csv].[result02]' />
-                <field name='[s_epi_complete_data.csv].[result03]' />
-                <field name='[s_epi_complete_data.csv].[result04]' />
-                <field name='[s_epi_complete_data.csv].[result05]' />
-                <field name='[s_epi_complete_data.csv].[result06]' />
-                <field name='[s_epi_complete_data.csv].[result07]' />
-                <field name='[s_epi_complete_data.csv].[result08]' />
-                <field name='[s_epi_complete_data.csv].[result09]' />
-                <field name='[s_epi_complete_data.csv].[result10]' />
-                <field name='[s_epi_complete_data.csv].[result11]' />
-                <field name='[s_epi_complete_data.csv].[result12]' />
-              </group>
-            </groups>
-            <relation connection='cloudfile:googledrive-textscan.0xbletn0499xh219c44kn034pide' name='s_epi_complete_data.csv' table='[s_epi_complete_data#csv]' type='table'>
-              <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
-                <column datatype='string' name='id' ordinal='0' />
-                <column datatype='string' name='hospcode' ordinal='1' />
-                <column datatype='string' name='areacode' ordinal='2' />
-                <column datatype='datetime' date-parse-format='yyyyMMddHHmm' name='date_com' ordinal='3' />
-                <column datatype='integer' name='b_year' ordinal='4' />
-                <column datatype='integer' name='target' ordinal='5' />
-                <column datatype='integer' name='result' ordinal='6' />
-                <column datatype='integer' name='target10' ordinal='7' />
-                <column datatype='integer' name='result10' ordinal='8' />
-                <column datatype='integer' name='target11' ordinal='9' />
-                <column datatype='integer' name='result11' ordinal='10' />
-                <column datatype='integer' name='target12' ordinal='11' />
-                <column datatype='integer' name='result12' ordinal='12' />
-                <column datatype='integer' name='target01' ordinal='13' />
-                <column datatype='integer' name='result01' ordinal='14' />
-                <column datatype='integer' name='target02' ordinal='15' />
-                <column datatype='integer' name='result02' ordinal='16' />
-                <column datatype='integer' name='target03' ordinal='17' />
-                <column datatype='integer' name='result03' ordinal='18' />
-                <column datatype='integer' name='target04' ordinal='19' />
-                <column datatype='integer' name='result04' ordinal='20' />
-                <column datatype='integer' name='target05' ordinal='21' />
-                <column datatype='integer' name='result05' ordinal='22' />
-                <column datatype='integer' name='target06' ordinal='23' />
-                <column datatype='integer' name='result06' ordinal='24' />
-                <column datatype='integer' name='target07' ordinal='25' />
-                <column datatype='integer' name='result07' ordinal='26' />
-                <column datatype='integer' name='target08' ordinal='27' />
-                <column datatype='integer' name='result08' ordinal='28' />
-                <column datatype='integer' name='target09' ordinal='29' />
-                <column datatype='integer' name='result09' ordinal='30' />
-              </columns>
-            </relation>
           </relation>
           <relation connection='textscan.0ez2idl11orcd015hss0h1dzp9po' name='hospital.csv' table='[hospital#csv]' type='table'>
             <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
@@ -194,8 +134,6 @@
           <map key='[Geometry (gdf2.geojson)]' value='[gdf2.geojson].[Geometry]' />
           <map key='[Geometry (gdf3.geojson)]' value='[gdf3.geojson].[Geometry]' />
           <map key='[Geometry]' value='[gdf1.geojson].[Geometry]' />
-          <map key='[Pivot Field Names]' value='[Pivot].[Pivot Field Names]' />
-          <map key='[Pivot Field Values]' value='[Pivot].[Pivot Field Values]' />
           <map key='[areacode]' value='[s_epi_complete_data.csv].[areacode]' />
           <map key='[b_year]' value='[s_epi_complete_data.csv].[b_year]' />
           <map key='[code5]' value='[hospital.csv].[code5]' />
@@ -220,9 +158,33 @@
           <map key='[prov]' value='[hospital.csv].[prov]' />
           <map key='[provcode]' value='[hospital.csv].[provcode]' />
           <map key='[region]' value='[hospital.csv].[region]' />
+          <map key='[result01]' value='[s_epi_complete_data.csv].[result01]' />
+          <map key='[result02]' value='[s_epi_complete_data.csv].[result02]' />
+          <map key='[result03]' value='[s_epi_complete_data.csv].[result03]' />
+          <map key='[result04]' value='[s_epi_complete_data.csv].[result04]' />
+          <map key='[result05]' value='[s_epi_complete_data.csv].[result05]' />
+          <map key='[result06]' value='[s_epi_complete_data.csv].[result06]' />
+          <map key='[result07]' value='[s_epi_complete_data.csv].[result07]' />
+          <map key='[result08]' value='[s_epi_complete_data.csv].[result08]' />
+          <map key='[result09]' value='[s_epi_complete_data.csv].[result09]' />
+          <map key='[result10]' value='[s_epi_complete_data.csv].[result10]' />
+          <map key='[result11]' value='[s_epi_complete_data.csv].[result11]' />
+          <map key='[result12]' value='[s_epi_complete_data.csv].[result12]' />
           <map key='[result]' value='[s_epi_complete_data.csv].[result]' />
           <map key='[subdist]' value='[hospital.csv].[subdist]' />
           <map key='[subdistcode]' value='[hospital.csv].[subdistcode]' />
+          <map key='[target01]' value='[s_epi_complete_data.csv].[target01]' />
+          <map key='[target02]' value='[s_epi_complete_data.csv].[target02]' />
+          <map key='[target03]' value='[s_epi_complete_data.csv].[target03]' />
+          <map key='[target04]' value='[s_epi_complete_data.csv].[target04]' />
+          <map key='[target05]' value='[s_epi_complete_data.csv].[target05]' />
+          <map key='[target06]' value='[s_epi_complete_data.csv].[target06]' />
+          <map key='[target07]' value='[s_epi_complete_data.csv].[target07]' />
+          <map key='[target08]' value='[s_epi_complete_data.csv].[target08]' />
+          <map key='[target09]' value='[s_epi_complete_data.csv].[target09]' />
+          <map key='[target10]' value='[s_epi_complete_data.csv].[target10]' />
+          <map key='[target11]' value='[s_epi_complete_data.csv].[target11]' />
+          <map key='[target12]' value='[s_epi_complete_data.csv].[target12]' />
           <map key='[target]' value='[s_epi_complete_data.csv].[target]' />
           <map key='[type (gdf1.geojson)]' value='[gdf1.geojson].[type]' />
           <map key='[type (gdf2.geojson)]' value='[gdf2.geojson].[type]' />
@@ -360,24 +322,288 @@
             <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[s_epi_complete_data.csv_5DF6476C4A77453E8EA2F06418AE9F02]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
           </metadata-record>
           <metadata-record class='column'>
-            <remote-name>Pivot Field Names</remote-name>
-            <remote-type>129</remote-type>
-            <local-name>[Pivot Field Names]</local-name>
-            <parent-name>[Pivot]</parent-name>
-            <remote-alias>Pivot Field Names</remote-alias>
+            <remote-name>target10</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[target10]</local-name>
+            <parent-name>[s_epi_complete_data.csv]</parent-name>
+            <remote-alias>target10</remote-alias>
             <ordinal>7</ordinal>
-            <local-type>string</local-type>
-            <aggregation>Count</aggregation>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
             <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[s_epi_complete_data.csv_5DF6476C4A77453E8EA2F06418AE9F02]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
           </metadata-record>
           <metadata-record class='column'>
-            <remote-name>Pivot Field Values</remote-name>
+            <remote-name>result10</remote-name>
             <remote-type>20</remote-type>
-            <local-name>[Pivot Field Values]</local-name>
-            <parent-name>[Pivot]</parent-name>
-            <remote-alias>Pivot Field Values</remote-alias>
+            <local-name>[result10]</local-name>
+            <parent-name>[s_epi_complete_data.csv]</parent-name>
+            <remote-alias>result10</remote-alias>
             <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[s_epi_complete_data.csv_5DF6476C4A77453E8EA2F06418AE9F02]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>target11</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[target11]</local-name>
+            <parent-name>[s_epi_complete_data.csv]</parent-name>
+            <remote-alias>target11</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[s_epi_complete_data.csv_5DF6476C4A77453E8EA2F06418AE9F02]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>result11</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[result11]</local-name>
+            <parent-name>[s_epi_complete_data.csv]</parent-name>
+            <remote-alias>result11</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[s_epi_complete_data.csv_5DF6476C4A77453E8EA2F06418AE9F02]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>target12</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[target12]</local-name>
+            <parent-name>[s_epi_complete_data.csv]</parent-name>
+            <remote-alias>target12</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[s_epi_complete_data.csv_5DF6476C4A77453E8EA2F06418AE9F02]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>result12</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[result12]</local-name>
+            <parent-name>[s_epi_complete_data.csv]</parent-name>
+            <remote-alias>result12</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[s_epi_complete_data.csv_5DF6476C4A77453E8EA2F06418AE9F02]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>target01</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[target01]</local-name>
+            <parent-name>[s_epi_complete_data.csv]</parent-name>
+            <remote-alias>target01</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[s_epi_complete_data.csv_5DF6476C4A77453E8EA2F06418AE9F02]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>result01</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[result01]</local-name>
+            <parent-name>[s_epi_complete_data.csv]</parent-name>
+            <remote-alias>result01</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[s_epi_complete_data.csv_5DF6476C4A77453E8EA2F06418AE9F02]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>target02</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[target02]</local-name>
+            <parent-name>[s_epi_complete_data.csv]</parent-name>
+            <remote-alias>target02</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[s_epi_complete_data.csv_5DF6476C4A77453E8EA2F06418AE9F02]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>result02</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[result02]</local-name>
+            <parent-name>[s_epi_complete_data.csv]</parent-name>
+            <remote-alias>result02</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[s_epi_complete_data.csv_5DF6476C4A77453E8EA2F06418AE9F02]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>target03</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[target03]</local-name>
+            <parent-name>[s_epi_complete_data.csv]</parent-name>
+            <remote-alias>target03</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[s_epi_complete_data.csv_5DF6476C4A77453E8EA2F06418AE9F02]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>result03</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[result03]</local-name>
+            <parent-name>[s_epi_complete_data.csv]</parent-name>
+            <remote-alias>result03</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[s_epi_complete_data.csv_5DF6476C4A77453E8EA2F06418AE9F02]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>target04</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[target04]</local-name>
+            <parent-name>[s_epi_complete_data.csv]</parent-name>
+            <remote-alias>target04</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[s_epi_complete_data.csv_5DF6476C4A77453E8EA2F06418AE9F02]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>result04</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[result04]</local-name>
+            <parent-name>[s_epi_complete_data.csv]</parent-name>
+            <remote-alias>result04</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[s_epi_complete_data.csv_5DF6476C4A77453E8EA2F06418AE9F02]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>target05</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[target05]</local-name>
+            <parent-name>[s_epi_complete_data.csv]</parent-name>
+            <remote-alias>target05</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[s_epi_complete_data.csv_5DF6476C4A77453E8EA2F06418AE9F02]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>result05</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[result05]</local-name>
+            <parent-name>[s_epi_complete_data.csv]</parent-name>
+            <remote-alias>result05</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[s_epi_complete_data.csv_5DF6476C4A77453E8EA2F06418AE9F02]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>target06</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[target06]</local-name>
+            <parent-name>[s_epi_complete_data.csv]</parent-name>
+            <remote-alias>target06</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[s_epi_complete_data.csv_5DF6476C4A77453E8EA2F06418AE9F02]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>result06</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[result06]</local-name>
+            <parent-name>[s_epi_complete_data.csv]</parent-name>
+            <remote-alias>result06</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[s_epi_complete_data.csv_5DF6476C4A77453E8EA2F06418AE9F02]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>target07</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[target07]</local-name>
+            <parent-name>[s_epi_complete_data.csv]</parent-name>
+            <remote-alias>target07</remote-alias>
+            <ordinal>25</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[s_epi_complete_data.csv_5DF6476C4A77453E8EA2F06418AE9F02]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>result07</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[result07]</local-name>
+            <parent-name>[s_epi_complete_data.csv]</parent-name>
+            <remote-alias>result07</remote-alias>
+            <ordinal>26</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[s_epi_complete_data.csv_5DF6476C4A77453E8EA2F06418AE9F02]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>target08</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[target08]</local-name>
+            <parent-name>[s_epi_complete_data.csv]</parent-name>
+            <remote-alias>target08</remote-alias>
+            <ordinal>27</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[s_epi_complete_data.csv_5DF6476C4A77453E8EA2F06418AE9F02]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>result08</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[result08]</local-name>
+            <parent-name>[s_epi_complete_data.csv]</parent-name>
+            <remote-alias>result08</remote-alias>
+            <ordinal>28</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[s_epi_complete_data.csv_5DF6476C4A77453E8EA2F06418AE9F02]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>target09</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[target09]</local-name>
+            <parent-name>[s_epi_complete_data.csv]</parent-name>
+            <remote-alias>target09</remote-alias>
+            <ordinal>29</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[s_epi_complete_data.csv_5DF6476C4A77453E8EA2F06418AE9F02]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>result09</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[result09]</local-name>
+            <parent-name>[s_epi_complete_data.csv]</parent-name>
+            <remote-alias>result09</remote-alias>
+            <ordinal>30</ordinal>
             <local-type>integer</local-type>
             <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
@@ -389,7 +615,7 @@
             <local-name>[code9]</local-name>
             <parent-name>[hospital.csv]</parent-name>
             <remote-alias>code9</remote-alias>
-            <ordinal>9</ordinal>
+            <ordinal>31</ordinal>
             <local-type>integer</local-type>
             <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
@@ -401,7 +627,7 @@
             <local-name>[code5]</local-name>
             <parent-name>[hospital.csv]</parent-name>
             <remote-alias>code5</remote-alias>
-            <ordinal>10</ordinal>
+            <ordinal>32</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <scale>1</scale>
@@ -416,7 +642,7 @@
             <local-name>[name]</local-name>
             <parent-name>[hospital.csv]</parent-name>
             <remote-alias>name</remote-alias>
-            <ordinal>11</ordinal>
+            <ordinal>33</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <scale>1</scale>
@@ -431,7 +657,7 @@
             <local-name>[prigov]</local-name>
             <parent-name>[hospital.csv]</parent-name>
             <remote-alias>prigov</remote-alias>
-            <ordinal>12</ordinal>
+            <ordinal>34</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <scale>1</scale>
@@ -446,7 +672,7 @@
             <local-name>[type]</local-name>
             <parent-name>[hospital.csv]</parent-name>
             <remote-alias>type</remote-alias>
-            <ordinal>13</ordinal>
+            <ordinal>35</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <scale>1</scale>
@@ -461,7 +687,7 @@
             <local-name>[org]</local-name>
             <parent-name>[hospital.csv]</parent-name>
             <remote-alias>org</remote-alias>
-            <ordinal>14</ordinal>
+            <ordinal>36</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <scale>1</scale>
@@ -476,7 +702,7 @@
             <local-name>[region]</local-name>
             <parent-name>[hospital.csv]</parent-name>
             <remote-alias>region</remote-alias>
-            <ordinal>15</ordinal>
+            <ordinal>37</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <scale>1</scale>
@@ -491,7 +717,7 @@
             <local-name>[provcode]</local-name>
             <parent-name>[hospital.csv]</parent-name>
             <remote-alias>provcode</remote-alias>
-            <ordinal>16</ordinal>
+            <ordinal>38</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <scale>1</scale>
@@ -506,7 +732,7 @@
             <local-name>[prov]</local-name>
             <parent-name>[hospital.csv]</parent-name>
             <remote-alias>prov</remote-alias>
-            <ordinal>17</ordinal>
+            <ordinal>39</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <scale>1</scale>
@@ -521,7 +747,7 @@
             <local-name>[distcode]</local-name>
             <parent-name>[hospital.csv]</parent-name>
             <remote-alias>distcode</remote-alias>
-            <ordinal>18</ordinal>
+            <ordinal>40</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <scale>1</scale>
@@ -536,7 +762,7 @@
             <local-name>[dist]</local-name>
             <parent-name>[hospital.csv]</parent-name>
             <remote-alias>dist</remote-alias>
-            <ordinal>19</ordinal>
+            <ordinal>41</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <scale>1</scale>
@@ -551,7 +777,7 @@
             <local-name>[subdistcode]</local-name>
             <parent-name>[hospital.csv]</parent-name>
             <remote-alias>subdistcode</remote-alias>
-            <ordinal>20</ordinal>
+            <ordinal>42</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <scale>1</scale>
@@ -566,7 +792,7 @@
             <local-name>[subdist]</local-name>
             <parent-name>[hospital.csv]</parent-name>
             <remote-alias>subdist</remote-alias>
-            <ordinal>21</ordinal>
+            <ordinal>43</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <scale>1</scale>
@@ -581,7 +807,7 @@
             <local-name>[data]</local-name>
             <parent-name>[gdf1.geojson]</parent-name>
             <remote-alias>data</remote-alias>
-            <ordinal>22</ordinal>
+            <ordinal>44</ordinal>
             <local-type>integer</local-type>
             <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
@@ -593,7 +819,7 @@
             <local-name>[zone]</local-name>
             <parent-name>[gdf1.geojson]</parent-name>
             <remote-alias>zone</remote-alias>
-            <ordinal>23</ordinal>
+            <ordinal>45</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <contains-null>true</contains-null>
@@ -606,7 +832,7 @@
             <local-name>[name (gdf1.geojson)]</local-name>
             <parent-name>[gdf1.geojson]</parent-name>
             <remote-alias>name</remote-alias>
-            <ordinal>24</ordinal>
+            <ordinal>46</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <contains-null>true</contains-null>
@@ -619,7 +845,7 @@
             <local-name>[id (gdf1.geojson)]</local-name>
             <parent-name>[gdf1.geojson]</parent-name>
             <remote-alias>id</remote-alias>
-            <ordinal>25</ordinal>
+            <ordinal>47</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <contains-null>true</contains-null>
@@ -632,7 +858,7 @@
             <local-name>[type (gdf1.geojson)]</local-name>
             <parent-name>[gdf1.geojson]</parent-name>
             <remote-alias>type</remote-alias>
-            <ordinal>26</ordinal>
+            <ordinal>48</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <contains-null>true</contains-null>
@@ -645,7 +871,7 @@
             <local-name>[Geometry]</local-name>
             <parent-name>[gdf1.geojson]</parent-name>
             <remote-alias>Geometry</remote-alias>
-            <ordinal>27</ordinal>
+            <ordinal>49</ordinal>
             <local-type>spatial</local-type>
             <aggregation>Collect</aggregation>
             <contains-null>true</contains-null>
@@ -657,7 +883,7 @@
             <local-name>[data (gdf2.geojson)]</local-name>
             <parent-name>[gdf2.geojson]</parent-name>
             <remote-alias>data</remote-alias>
-            <ordinal>28</ordinal>
+            <ordinal>50</ordinal>
             <local-type>integer</local-type>
             <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
@@ -669,7 +895,7 @@
             <local-name>[zone (gdf2.geojson)]</local-name>
             <parent-name>[gdf2.geojson]</parent-name>
             <remote-alias>zone</remote-alias>
-            <ordinal>29</ordinal>
+            <ordinal>51</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <contains-null>true</contains-null>
@@ -682,7 +908,7 @@
             <local-name>[name (gdf2.geojson)]</local-name>
             <parent-name>[gdf2.geojson]</parent-name>
             <remote-alias>name</remote-alias>
-            <ordinal>30</ordinal>
+            <ordinal>52</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <contains-null>true</contains-null>
@@ -695,7 +921,7 @@
             <local-name>[id (gdf2.geojson)]</local-name>
             <parent-name>[gdf2.geojson]</parent-name>
             <remote-alias>id</remote-alias>
-            <ordinal>31</ordinal>
+            <ordinal>53</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <contains-null>true</contains-null>
@@ -708,7 +934,7 @@
             <local-name>[type (gdf2.geojson)]</local-name>
             <parent-name>[gdf2.geojson]</parent-name>
             <remote-alias>type</remote-alias>
-            <ordinal>32</ordinal>
+            <ordinal>54</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <contains-null>true</contains-null>
@@ -721,7 +947,7 @@
             <local-name>[Geometry (gdf2.geojson)]</local-name>
             <parent-name>[gdf2.geojson]</parent-name>
             <remote-alias>Geometry</remote-alias>
-            <ordinal>33</ordinal>
+            <ordinal>55</ordinal>
             <local-type>spatial</local-type>
             <aggregation>Collect</aggregation>
             <contains-null>true</contains-null>
@@ -733,7 +959,7 @@
             <local-name>[data (gdf3.geojson)]</local-name>
             <parent-name>[gdf3.geojson]</parent-name>
             <remote-alias>data</remote-alias>
-            <ordinal>34</ordinal>
+            <ordinal>56</ordinal>
             <local-type>integer</local-type>
             <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
@@ -745,7 +971,7 @@
             <local-name>[zone (gdf3.geojson)]</local-name>
             <parent-name>[gdf3.geojson]</parent-name>
             <remote-alias>zone</remote-alias>
-            <ordinal>35</ordinal>
+            <ordinal>57</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <contains-null>true</contains-null>
@@ -758,7 +984,7 @@
             <local-name>[name (gdf3.geojson)]</local-name>
             <parent-name>[gdf3.geojson]</parent-name>
             <remote-alias>name</remote-alias>
-            <ordinal>36</ordinal>
+            <ordinal>58</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <contains-null>true</contains-null>
@@ -771,7 +997,7 @@
             <local-name>[id (gdf3.geojson)]</local-name>
             <parent-name>[gdf3.geojson]</parent-name>
             <remote-alias>id</remote-alias>
-            <ordinal>37</ordinal>
+            <ordinal>59</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <contains-null>true</contains-null>
@@ -784,7 +1010,7 @@
             <local-name>[type (gdf3.geojson)]</local-name>
             <parent-name>[gdf3.geojson]</parent-name>
             <remote-alias>type</remote-alias>
-            <ordinal>38</ordinal>
+            <ordinal>60</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <contains-null>true</contains-null>
@@ -797,7 +1023,7 @@
             <local-name>[Geometry (gdf3.geojson)]</local-name>
             <parent-name>[gdf3.geojson]</parent-name>
             <remote-alias>Geometry</remote-alias>
-            <ordinal>39</ordinal>
+            <ordinal>61</ordinal>
             <local-type>spatial</local-type>
             <aggregation>Collect</aggregation>
             <contains-null>true</contains-null>
@@ -842,9 +1068,33 @@
       <column caption='Prov' datatype='string' name='[prov]' role='dimension' type='nominal' />
       <column caption='Provcode' datatype='string' default-role='measure' default-type='quantitative' name='[provcode]' role='dimension' type='nominal' />
       <column caption='Region' datatype='string' default-role='measure' default-type='quantitative' name='[region]' role='dimension' type='nominal' />
+      <column caption='Result01' datatype='integer' name='[result01]' role='measure' type='quantitative' />
+      <column caption='Result02' datatype='integer' name='[result02]' role='measure' type='quantitative' />
+      <column caption='Result03' datatype='integer' name='[result03]' role='measure' type='quantitative' />
+      <column caption='Result04' datatype='integer' name='[result04]' role='measure' type='quantitative' />
+      <column caption='Result05' datatype='integer' name='[result05]' role='measure' type='quantitative' />
+      <column caption='Result06' datatype='integer' name='[result06]' role='measure' type='quantitative' />
+      <column caption='Result07' datatype='integer' name='[result07]' role='measure' type='quantitative' />
+      <column caption='Result08' datatype='integer' name='[result08]' role='measure' type='quantitative' />
+      <column caption='Result09' datatype='integer' name='[result09]' role='measure' type='quantitative' />
+      <column caption='Result10' datatype='integer' name='[result10]' role='measure' type='quantitative' />
+      <column caption='Result11' datatype='integer' name='[result11]' role='measure' type='quantitative' />
+      <column caption='Result12' datatype='integer' name='[result12]' role='measure' type='quantitative' />
       <column caption='Result' datatype='integer' name='[result]' role='measure' type='quantitative' />
       <column caption='Subdist' datatype='string' name='[subdist]' role='dimension' type='nominal' />
       <column caption='Subdistcode' datatype='string' default-role='measure' default-type='quantitative' name='[subdistcode]' role='dimension' type='nominal' />
+      <column caption='Target01' datatype='integer' name='[target01]' role='measure' type='quantitative' />
+      <column caption='Target02' datatype='integer' name='[target02]' role='measure' type='quantitative' />
+      <column caption='Target03' datatype='integer' name='[target03]' role='measure' type='quantitative' />
+      <column caption='Target04' datatype='integer' name='[target04]' role='measure' type='quantitative' />
+      <column caption='Target05' datatype='integer' name='[target05]' role='measure' type='quantitative' />
+      <column caption='Target06' datatype='integer' name='[target06]' role='measure' type='quantitative' />
+      <column caption='Target07' datatype='integer' name='[target07]' role='measure' type='quantitative' />
+      <column caption='Target08' datatype='integer' name='[target08]' role='measure' type='quantitative' />
+      <column caption='Target09' datatype='integer' name='[target09]' role='measure' type='quantitative' />
+      <column caption='Target10' datatype='integer' name='[target10]' role='measure' type='quantitative' />
+      <column caption='Target11' datatype='integer' name='[target11]' role='measure' type='quantitative' />
+      <column caption='Target12' datatype='integer' name='[target12]' role='measure' type='quantitative' />
       <column caption='Target' datatype='integer' name='[target]' role='measure' type='quantitative' />
       <column caption='Type (Gdf1.Geojson)' datatype='string' name='[type (gdf1.geojson)]' role='dimension' type='nominal' />
       <column caption='Type (Gdf2.Geojson)' datatype='string' name='[type (gdf2.geojson)]' role='dimension' type='nominal' />
@@ -930,100 +1180,40 @@
           </object>
           <object caption='s_epi_complete_data.csv' id='s_epi_complete_data.csv_5DF6476C4A77453E8EA2F06418AE9F02'>
             <properties context=''>
-              <relation name='Pivot' type='pivot'>
-                <columns>
-                  <column datatype='string' name='Pivot Field Names' />
-                  <column datatype='integer' name='Pivot Field Values' />
+              <relation connection='cloudfile:googledrive-textscan.0xbletn0499xh219c44kn034pide' name='s_epi_complete_data.csv' table='[s_epi_complete_data#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='string' name='id' ordinal='0' />
+                  <column datatype='string' name='hospcode' ordinal='1' />
+                  <column datatype='string' name='areacode' ordinal='2' />
+                  <column datatype='datetime' date-parse-format='yyyyMMddHHmm' name='date_com' ordinal='3' />
+                  <column datatype='integer' name='b_year' ordinal='4' />
+                  <column datatype='integer' name='target' ordinal='5' />
+                  <column datatype='integer' name='result' ordinal='6' />
+                  <column datatype='integer' name='target10' ordinal='7' />
+                  <column datatype='integer' name='result10' ordinal='8' />
+                  <column datatype='integer' name='target11' ordinal='9' />
+                  <column datatype='integer' name='result11' ordinal='10' />
+                  <column datatype='integer' name='target12' ordinal='11' />
+                  <column datatype='integer' name='result12' ordinal='12' />
+                  <column datatype='integer' name='target01' ordinal='13' />
+                  <column datatype='integer' name='result01' ordinal='14' />
+                  <column datatype='integer' name='target02' ordinal='15' />
+                  <column datatype='integer' name='result02' ordinal='16' />
+                  <column datatype='integer' name='target03' ordinal='17' />
+                  <column datatype='integer' name='result03' ordinal='18' />
+                  <column datatype='integer' name='target04' ordinal='19' />
+                  <column datatype='integer' name='result04' ordinal='20' />
+                  <column datatype='integer' name='target05' ordinal='21' />
+                  <column datatype='integer' name='result05' ordinal='22' />
+                  <column datatype='integer' name='target06' ordinal='23' />
+                  <column datatype='integer' name='result06' ordinal='24' />
+                  <column datatype='integer' name='target07' ordinal='25' />
+                  <column datatype='integer' name='result07' ordinal='26' />
+                  <column datatype='integer' name='target08' ordinal='27' />
+                  <column datatype='integer' name='result08' ordinal='28' />
+                  <column datatype='integer' name='target09' ordinal='29' />
+                  <column datatype='integer' name='result09' ordinal='30' />
                 </columns>
-                <tag name='Pivot Field Names'>
-                  <value name='[Target01]' />
-                  <value name='[Target02]' />
-                  <value name='[Target03]' />
-                  <value name='[Target04]' />
-                  <value name='[Target05]' />
-                  <value name='[Target06]' />
-                  <value name='[Target07]' />
-                  <value name='[Target08]' />
-                  <value name='[Target09]' />
-                  <value name='[Target10]' />
-                  <value name='[Target11]' />
-                  <value name='[Target12]' />
-                  <value name='[Result01]' />
-                  <value name='[Result02]' />
-                  <value name='[Result03]' />
-                  <value name='[Result04]' />
-                  <value name='[Result05]' />
-                  <value name='[Result06]' />
-                  <value name='[Result07]' />
-                  <value name='[Result08]' />
-                  <value name='[Result09]' />
-                  <value name='[Result10]' />
-                  <value name='[Result11]' />
-                  <value name='[Result12]' />
-                </tag>
-                <groups>
-                  <group name='Pivot Field Values'>
-                    <field name='[s_epi_complete_data.csv].[target01]' />
-                    <field name='[s_epi_complete_data.csv].[target02]' />
-                    <field name='[s_epi_complete_data.csv].[target03]' />
-                    <field name='[s_epi_complete_data.csv].[target04]' />
-                    <field name='[s_epi_complete_data.csv].[target05]' />
-                    <field name='[s_epi_complete_data.csv].[target06]' />
-                    <field name='[s_epi_complete_data.csv].[target07]' />
-                    <field name='[s_epi_complete_data.csv].[target08]' />
-                    <field name='[s_epi_complete_data.csv].[target09]' />
-                    <field name='[s_epi_complete_data.csv].[target10]' />
-                    <field name='[s_epi_complete_data.csv].[target11]' />
-                    <field name='[s_epi_complete_data.csv].[target12]' />
-                    <field name='[s_epi_complete_data.csv].[result01]' />
-                    <field name='[s_epi_complete_data.csv].[result02]' />
-                    <field name='[s_epi_complete_data.csv].[result03]' />
-                    <field name='[s_epi_complete_data.csv].[result04]' />
-                    <field name='[s_epi_complete_data.csv].[result05]' />
-                    <field name='[s_epi_complete_data.csv].[result06]' />
-                    <field name='[s_epi_complete_data.csv].[result07]' />
-                    <field name='[s_epi_complete_data.csv].[result08]' />
-                    <field name='[s_epi_complete_data.csv].[result09]' />
-                    <field name='[s_epi_complete_data.csv].[result10]' />
-                    <field name='[s_epi_complete_data.csv].[result11]' />
-                    <field name='[s_epi_complete_data.csv].[result12]' />
-                  </group>
-                </groups>
-                <relation connection='cloudfile:googledrive-textscan.0xbletn0499xh219c44kn034pide' name='s_epi_complete_data.csv' table='[s_epi_complete_data#csv]' type='table'>
-                  <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
-                    <column datatype='string' name='id' ordinal='0' />
-                    <column datatype='string' name='hospcode' ordinal='1' />
-                    <column datatype='string' name='areacode' ordinal='2' />
-                    <column datatype='datetime' date-parse-format='yyyyMMddHHmm' name='date_com' ordinal='3' />
-                    <column datatype='integer' name='b_year' ordinal='4' />
-                    <column datatype='integer' name='target' ordinal='5' />
-                    <column datatype='integer' name='result' ordinal='6' />
-                    <column datatype='integer' name='target10' ordinal='7' />
-                    <column datatype='integer' name='result10' ordinal='8' />
-                    <column datatype='integer' name='target11' ordinal='9' />
-                    <column datatype='integer' name='result11' ordinal='10' />
-                    <column datatype='integer' name='target12' ordinal='11' />
-                    <column datatype='integer' name='result12' ordinal='12' />
-                    <column datatype='integer' name='target01' ordinal='13' />
-                    <column datatype='integer' name='result01' ordinal='14' />
-                    <column datatype='integer' name='target02' ordinal='15' />
-                    <column datatype='integer' name='result02' ordinal='16' />
-                    <column datatype='integer' name='target03' ordinal='17' />
-                    <column datatype='integer' name='result03' ordinal='18' />
-                    <column datatype='integer' name='target04' ordinal='19' />
-                    <column datatype='integer' name='result04' ordinal='20' />
-                    <column datatype='integer' name='target05' ordinal='21' />
-                    <column datatype='integer' name='result05' ordinal='22' />
-                    <column datatype='integer' name='target06' ordinal='23' />
-                    <column datatype='integer' name='result06' ordinal='24' />
-                    <column datatype='integer' name='target07' ordinal='25' />
-                    <column datatype='integer' name='result07' ordinal='26' />
-                    <column datatype='integer' name='target08' ordinal='27' />
-                    <column datatype='integer' name='result08' ordinal='28' />
-                    <column datatype='integer' name='target09' ordinal='29' />
-                    <column datatype='integer' name='result09' ordinal='30' />
-                  </columns>
-                </relation>
               </relation>
             </properties>
           </object>
@@ -1395,7 +1585,7 @@
     </worksheet>
   </worksheets>
   <windows source-height='30'>
-    <window class='worksheet' maximized='true' name='Sheet 1'>
+    <window class='worksheet' name='Sheet 1'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -1418,7 +1608,7 @@
       </cards>
       <simple-id uuid='{401490BB-DCCF-4C9A-A7EE-F0ACBC0AE17B}' />
     </window>
-    <window class='worksheet' name='Sheet 1 (2)'>
+    <window class='worksheet' maximized='true' name='Sheet 1 (2)'>
       <cards>
         <edge name='left'>
           <strip size='160'>

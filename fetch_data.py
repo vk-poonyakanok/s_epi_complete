@@ -7,6 +7,15 @@ from googleapiclient.discovery import build
 from googleapiclient.http import MediaFileUpload
 import os
 
+def map_column_to_date(b_year, column):
+    ce_year = b_year - 543  # Convert the Buddhist Era (BE) year to Common Era (CE) by subtracting 543
+    month_num = int(column[-2:])  # Extract the month number from the column name
+    if month_num >= 10:  # For 'target10', 'target11', and 'target12', the year is the previous CE year
+        year = ce_year - 1
+    else:  # For 'target01' to 'target09', it's the same CE year
+        year = ce_year
+    return f"{year}-{str(month_num).zfill(2)}-01"  # Return the date in 'YYYY-MM-DD' (ISO8601) format
+
 def fetch_data_and_save():
     # Calculate the current year in the Buddhist Era
     current_year_be = datetime.now().year + 543
@@ -20,7 +29,7 @@ def fetch_data_and_save():
     for province_code in province_codes:
         data = {
             "tableName": "s_epi_complete",
-            "year": str(current_year_be),  # Use the current year in BE
+            "year": str(current_year_be),
             "province": province_code,
             "type": "json"
         }
@@ -31,8 +40,40 @@ def fetch_data_and_save():
         else:
             print(f"Failed to retrieve data for province code {province_code}. Status code: {response.status_code}")
 
-    s_epi_complete_data.to_csv('s_epi_complete_data.csv', index=False)
-    print("Data fetching and saving complete.")
+    # Updating the id_to_name dictionary with English descriptions
+    id_to_name = {
+        "28dd2c7955ce926456240b2ff0100bde": "1yr",
+        "35f4a8d465e6e1edc05f3d8ab658c551": "2yr",
+        "d1fe173d08e959397adf34b1d77e88d7": "3yr",
+        "f033ab37c30201f73f142449d037028d": "5yr",
+        "30f72fc853a2cc02ef953dc97f36f596": "7yr"
+    }
+    
+    # Mapping the 'id' column to the new short report names using 'id_to_name' dictionary
+    s_epi_complete_data['report_name'] = s_epi_complete_data['id'].map(id_to_name)
+    
+    # Proceed with the optimized data transformation
+    s_epi_complete_data['b_year'] = s_epi_complete_data['b_year'].astype(int)
+    optimized_df = pd.DataFrame()
+    
+    for month in range(1, 13):
+        target_col = f'target{str(month).zfill(2)}'
+        result_col = f'result{str(month).zfill(2)}'
+        date_col = s_epi_complete_data['b_year'].apply(lambda x: map_column_to_date(x, target_col))
+        temp_df = s_epi_complete_data[['report_name', 'hospcode', 'areacode', 'b_year']].copy()
+        temp_df['date'] = date_col
+        temp_df['target'] = s_epi_complete_data[target_col]
+        temp_df['result'] = s_epi_complete_data[result_col]
+        optimized_df = pd.concat([optimized_df, temp_df], ignore_index=True)
+    
+    # Finalize the optimized DataFrame
+    optimized_df.dropna(subset=['target', 'result'], inplace=True)
+    optimized_df['target'] = optimized_df['target'].astype(int)
+    optimized_df['result'] = optimized_df['result'].astype(int)
+
+    # Export the optimized DataFrame to a CSV file
+    optimized_df.to_csv('optimized_s_epi_complete_data.csv', index=False)
+    print("Optimized data transformation and saving complete.")
 
 def upload_to_drive(filename, folder_id, file_id=None):
     service_account_file = os.getenv('GOOGLE_APPLICATION_CREDENTIALS')
