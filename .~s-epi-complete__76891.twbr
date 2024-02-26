@@ -1306,7 +1306,7 @@
       </cards>
       <simple-id uuid='{EAD08AE5-B615-44C3-ACE1-9E675F90C84E}' />
     </window>
-    <window class='worksheet' maximized='true' name='District'>
+    <window class='worksheet' name='District'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -1338,7 +1338,7 @@
       </viewpoint>
       <simple-id uuid='{D19E73E0-D929-403D-A4A8-3922A413926B}' />
     </window>
-    <window class='dashboard' name='s-epi-complete'>
+    <window class='dashboard' maximized='true' name='s-epi-complete'>
       <viewpoints />
       <active id='-1' />
       <simple-id uuid='{8D217CEC-01F1-4875-A074-87D89DA5E029}' />

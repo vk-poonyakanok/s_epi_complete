@@ -7,6 +7,15 @@ from googleapiclient.discovery import build
 from googleapiclient.http import MediaFileUpload
 import os
 
+def map_column_to_date(b_year, column):
+    ce_year = b_year - 543
+    month_num = int(column[-2:])
+    if month_num >= 10:
+        year = ce_year - 1
+    else:
+        year = ce_year
+    return f"{year}-{str(month_num).zfill(2)}-01"
+
 def fetch_data_and_save():
     # Calculate the current year in the Buddhist Era
     current_year_be = datetime.now().year + 543
@@ -34,8 +43,35 @@ def fetch_data_and_save():
             else:
                 print(f"Failed to retrieve data for year {year}, province code {province_code}. Status code: {response.status_code}")
 
-    s_epi_complete_data_all.to_csv('s_epi_complete_data_all.csv', index=False)
-    print("Yearly data fetching and saving complete.")
+    # Transformation steps here
+    id_to_name = {
+        "28dd2c7955ce926456240b2ff0100bde": "1yr",
+        "35f4a8d465e6e1edc05f3d8ab658c551": "2yr",
+        "d1fe173d08e959397adf34b1d77e88d7": "3yr",
+        "f033ab37c30201f73f142449d037028d": "5yr",
+        "30f72fc853a2cc02ef953dc97f36f596": "7yr"
+    }
+    s_epi_complete_data_all['report_name'] = s_epi_complete_data_all['id'].map(id_to_name)
+    s_epi_complete_data_all['b_year'] = s_epi_complete_data_all['b_year'].astype(int)
+
+    optimized_df_all = pd.DataFrame()
+    
+    for month in range(1, 13):
+        target_col = f'target{str(month).zfill(2)}'
+        result_col = f'result{str(month).zfill(2)}'
+        date_col = s_epi_complete_data_all['b_year'].apply(lambda x: map_column_to_date(x, target_col))
+        temp_df = s_epi_complete_data_all[['report_name', 'hospcode', 'areacode', 'b_year']].copy()
+        temp_df['date'] = date_col
+        temp_df['target'] = s_epi_complete_data_all[target_col]
+        temp_df['result'] = s_epi_complete_data_all[result_col]
+        optimized_df_all = pd.concat([optimized_df_all, temp_df], ignore_index=True)
+
+    optimized_df_all.dropna(subset=['target', 'result'], inplace=True)
+    optimized_df_all['target'] = optimized_df_all['target'].astype(int)
+    optimized_df_all['result'] = optimized_df_all['result'].astype(int)
+    
+    optimized_df_all.to_csv('optimized_s_epi_complete_data_all.csv', index=False)
+    print("Optimized yearly data transformation and saving complete.")
 
 def upload_to_drive(filename, folder_id, file_id=None):
     service_account_file = os.getenv('GOOGLE_APPLICATION_CREDENTIALS')
@@ -65,6 +101,6 @@ def upload_to_drive(filename, folder_id, file_id=None):
 if __name__ == '__main__':
     fetch_data_and_save()
     # Upload to Google Drive folder ID '1kUloOi3JWbV-ukH1OfpvN-S5lKt2_VND'
-    # Specify the existing file ID here to update the file ID '1XTktfgbtlNN4CnsM4BnQ758uwG06uT7y' instead of uploading as new
-    upload_to_drive('s_epi_complete_data_all.csv', '1kUloOi3JWbV-ukH1OfpvN-S5lKt2_VND', '1XTktfgbtlNN4CnsM4BnQ758uwG06uT7y')
+    # Specify the existing file ID here to update the file ID '1Fh6eRGpc3vAWJjwPdk85RXuK6C6NRB1Y' instead of uploading as new
+    upload_to_drive('s_epi_complete_data_all.csv', '1kUloOi3JWbV-ukH1OfpvN-S5lKt2_VND', '1Fh6eRGpc3vAWJjwPdk85RXuK6C6NRB1Y')
 
