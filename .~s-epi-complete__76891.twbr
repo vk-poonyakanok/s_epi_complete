@@ -3,12 +3,15 @@
 <!-- build 20233.23.1017.0948                               -->
 <workbook original-version='18.1' source-build='2023.3.0 (20233.23.1017.0948)' source-platform='mac' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
   <document-format-change-manifest>
+    <_.fcp.AccessibleZoneTabOrder.true...AccessibleZoneTabOrder />
     <_.fcp.AnimationOnByDefault.true...AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
     <MapboxVectorStylesAndLayers />
     <_.fcp.MarkAnimation.true...MarkAnimation />
     <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
     <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
     <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <SetMembershipControl />
     <SheetIdentifierTracking />
     <SpatialFileLayer />
     <WindowsPersistSimpleIdentifiers />
@@ -35,6 +38,9 @@
           <named-connection caption='gdf1' name='ogrdirect.0d830op08xacsq1d3vi9u11efvw2'>
             <connection class='ogrdirect' directory='/Users/Vitchakorn/Documents/GitHub/s_epi_complete' filename='gdf1.geojson' password='' server='' tablename='' />
           </named-connection>
+          <named-connection caption='optimized_s_epi_complete_data' name='cloudfile:googledrive-textscan.1v5f2b31h8k3f11dbztnf16rqg5t'>
+            <connection class='cloudfile:googledrive-textscan' cloudFileExtension='csv' cloudFileId='1smFzFo3YSWQ_xtEMHr2ACxKc0KnYX0gA' cloudFileMetadata_-_folder='1kUloOi3JWbV-ukH1OfpvN-S5lKt2_VND' cloudFileName='optimized_s_epi_complete_data.csv' cloudFileProvider='googledrive' cloudFileRequestURL='https://www.googleapis.com/drive/v3/files/1smFzFo3YSWQ_xtEMHr2ACxKc0KnYX0gA?alt=media' filename='optimized_s_epi_complete_data.csv' server='' server-oauth='' username='vk.poonyakanok@gmail.com' />
+          </named-connection>
         </named-connections>
         <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='ogrdirect.0d830op08xacsq1d3vi9u11efvw2' name='gdf1.geojson' table='[gdf1.geojson]' type='table'>
           <columns>
@@ -47,39 +53,15 @@
           </columns>
         </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
         <_.fcp.ObjectModelEncapsulateLegacy.true...relation type='collection'>
-          <relation connection='cloudfile:googledrive-textscan.0xbletn0499xh219c44kn034pide' name='s_epi_complete_data.csv' table='[s_epi_complete_data#csv]' type='table'>
+          <relation connection='cloudfile:googledrive-textscan.1v5f2b31h8k3f11dbztnf16rqg5t' name='optimized_s_epi_complete_data.csv' table='[optimized_s_epi_complete_data#csv]' type='table'>
             <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
-              <column datatype='string' name='id' ordinal='0' />
+              <column datatype='string' name='report_name' ordinal='0' />
               <column datatype='string' name='hospcode' ordinal='1' />
               <column datatype='string' name='areacode' ordinal='2' />
-              <column datatype='datetime' date-parse-format='yyyyMMddHHmm' name='date_com' ordinal='3' />
-              <column datatype='integer' name='b_year' ordinal='4' />
+              <column datatype='string' name='b_year' ordinal='3' />
+              <column datatype='date' name='date' ordinal='4' />
               <column datatype='integer' name='target' ordinal='5' />
               <column datatype='integer' name='result' ordinal='6' />
-              <column datatype='integer' name='target10' ordinal='7' />
-              <column datatype='integer' name='result10' ordinal='8' />
-              <column datatype='integer' name='target11' ordinal='9' />
-              <column datatype='integer' name='result11' ordinal='10' />
-              <column datatype='integer' name='target12' ordinal='11' />
-              <column datatype='integer' name='result12' ordinal='12' />
-              <column datatype='integer' name='target01' ordinal='13' />
-              <column datatype='integer' name='result01' ordinal='14' />
-              <column datatype='integer' name='target02' ordinal='15' />
-              <column datatype='integer' name='result02' ordinal='16' />
-              <column datatype='integer' name='target03' ordinal='17' />
-              <column datatype='integer' name='result03' ordinal='18' />
-              <column datatype='integer' name='target04' ordinal='19' />
-              <column datatype='integer' name='result04' ordinal='20' />
-              <column datatype='integer' name='target05' ordinal='21' />
-              <column datatype='integer' name='result05' ordinal='22' />
-              <column datatype='integer' name='target06' ordinal='23' />
-              <column datatype='integer' name='result06' ordinal='24' />
-              <column datatype='integer' name='target07' ordinal='25' />
-              <column datatype='integer' name='result07' ordinal='26' />
-              <column datatype='integer' name='target08' ordinal='27' />
-              <column datatype='integer' name='result08' ordinal='28' />
-              <column datatype='integer' name='target09' ordinal='29' />
-              <column datatype='integer' name='result09' ordinal='30' />
             </columns>
           </relation>
           <relation connection='textscan.0ez2idl11orcd015hss0h1dzp9po' name='hospital.csv' table='[hospital#csv]' type='table'>
@@ -134,21 +116,20 @@
           <map key='[Geometry (gdf2.geojson)]' value='[gdf2.geojson].[Geometry]' />
           <map key='[Geometry (gdf3.geojson)]' value='[gdf3.geojson].[Geometry]' />
           <map key='[Geometry]' value='[gdf1.geojson].[Geometry]' />
-          <map key='[areacode]' value='[s_epi_complete_data.csv].[areacode]' />
-          <map key='[b_year]' value='[s_epi_complete_data.csv].[b_year]' />
+          <map key='[areacode (optimized_s_epi_complete_data.csv)]' value='[optimized_s_epi_complete_data.csv].[areacode]' />
+          <map key='[b_year (optimized_s_epi_complete_data.csv)]' value='[optimized_s_epi_complete_data.csv].[b_year]' />
           <map key='[code5]' value='[hospital.csv].[code5]' />
           <map key='[code9]' value='[hospital.csv].[code9]' />
           <map key='[data (gdf2.geojson)]' value='[gdf2.geojson].[data]' />
           <map key='[data (gdf3.geojson)]' value='[gdf3.geojson].[data]' />
           <map key='[data]' value='[gdf1.geojson].[data]' />
-          <map key='[date_com]' value='[s_epi_complete_data.csv].[date_com]' />
+          <map key='[date]' value='[optimized_s_epi_complete_data.csv].[date]' />
           <map key='[dist]' value='[hospital.csv].[dist]' />
           <map key='[distcode]' value='[hospital.csv].[distcode]' />
-          <map key='[hospcode]' value='[s_epi_complete_data.csv].[hospcode]' />
+          <map key='[hospcode (optimized_s_epi_complete_data.csv)]' value='[optimized_s_epi_complete_data.csv].[hospcode]' />
           <map key='[id (gdf1.geojson)]' value='[gdf1.geojson].[id]' />
           <map key='[id (gdf2.geojson)]' value='[gdf2.geojson].[id]' />
           <map key='[id (gdf3.geojson)]' value='[gdf3.geojson].[id]' />
-          <map key='[id]' value='[s_epi_complete_data.csv].[id]' />
           <map key='[name (gdf1.geojson)]' value='[gdf1.geojson].[name]' />
           <map key='[name (gdf2.geojson)]' value='[gdf2.geojson].[name]' />
           <map key='[name (gdf3.geojson)]' value='[gdf3.geojson].[name]' />
@@ -158,34 +139,11 @@
           <map key='[prov]' value='[hospital.csv].[prov]' />
           <map key='[provcode]' value='[hospital.csv].[provcode]' />
           <map key='[region]' value='[hospital.csv].[region]' />
-          <map key='[result01]' value='[s_epi_complete_data.csv].[result01]' />
-          <map key='[result02]' value='[s_epi_complete_data.csv].[result02]' />
-          <map key='[result03]' value='[s_epi_complete_data.csv].[result03]' />
-          <map key='[result04]' value='[s_epi_complete_data.csv].[result04]' />
-          <map key='[result05]' value='[s_epi_complete_data.csv].[result05]' />
-          <map key='[result06]' value='[s_epi_complete_data.csv].[result06]' />
-          <map key='[result07]' value='[s_epi_complete_data.csv].[result07]' />
-          <map key='[result08]' value='[s_epi_complete_data.csv].[result08]' />
-          <map key='[result09]' value='[s_epi_complete_data.csv].[result09]' />
-          <map key='[result10]' value='[s_epi_complete_data.csv].[result10]' />
-          <map key='[result11]' value='[s_epi_complete_data.csv].[result11]' />
-          <map key='[result12]' value='[s_epi_complete_data.csv].[result12]' />
-          <map key='[result]' value='[s_epi_complete_data.csv].[result]' />
+          <map key='[report_name]' value='[optimized_s_epi_complete_data.csv].[report_name]' />
+          <map key='[result (optimized_s_epi_complete_data.csv)]' value='[optimized_s_epi_complete_data.csv].[result]' />
           <map key='[subdist]' value='[hospital.csv].[subdist]' />
           <map key='[subdistcode]' value='[hospital.csv].[subdistcode]' />
-          <map key='[target01]' value='[s_epi_complete_data.csv].[target01]' />
-          <map key='[target02]' value='[s_epi_complete_data.csv].[target02]' />
-          <map key='[target03]' value='[s_epi_complete_data.csv].[target03]' />
-          <map key='[target04]' value='[s_epi_complete_data.csv].[target04]' />
-          <map key='[target05]' value='[s_epi_complete_data.csv].[target05]' />
-          <map key='[target06]' value='[s_epi_complete_data.csv].[target06]' />
-          <map key='[target07]' value='[s_epi_complete_data.csv].[target07]' />
-          <map key='[target08]' value='[s_epi_complete_data.csv].[target08]' />
-          <map key='[target09]' value='[s_epi_complete_data.csv].[target09]' />
-          <map key='[target10]' value='[s_epi_complete_data.csv].[target10]' />
-          <map key='[target11]' value='[s_epi_complete_data.csv].[target11]' />
-          <map key='[target12]' value='[s_epi_complete_data.csv].[target12]' />
-          <map key='[target]' value='[s_epi_complete_data.csv].[target]' />
+          <map key='[target (optimized_s_epi_complete_data.csv)]' value='[optimized_s_epi_complete_data.csv].[target]' />
           <map key='[type (gdf1.geojson)]' value='[gdf1.geojson].[type]' />
           <map key='[type (gdf2.geojson)]' value='[gdf2.geojson].[type]' />
           <map key='[type (gdf3.geojson)]' value='[gdf3.geojson].[type]' />
@@ -198,7 +156,7 @@
           <metadata-record class='capability'>
             <remote-name />
             <remote-type>0</remote-type>
-            <parent-name>[s_epi_complete_data.csv]</parent-name>
+            <parent-name>[optimized_s_epi_complete_data.csv]</parent-name>
             <remote-alias />
             <aggregation>Count</aggregation>
             <contains-null>true</contains-null>
@@ -228,11 +186,11 @@
             </attributes>
           </metadata-record>
           <metadata-record class='column'>
-            <remote-name>id</remote-name>
+            <remote-name>report_name</remote-name>
             <remote-type>129</remote-type>
-            <local-name>[id]</local-name>
-            <parent-name>[s_epi_complete_data.csv]</parent-name>
-            <remote-alias>id</remote-alias>
+            <local-name>[report_name]</local-name>
+            <parent-name>[optimized_s_epi_complete_data.csv]</parent-name>
+            <remote-alias>report_name</remote-alias>
             <ordinal>0</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
@@ -240,13 +198,13 @@
             <width>1073741823</width>
             <contains-null>true</contains-null>
             <collation flag='0' name='LEN_RUS' />
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[s_epi_complete_data.csv_5DF6476C4A77453E8EA2F06418AE9F02]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[optimized_s_epi_complete_data.csv_1A10D5C399AE4D05835DF5FAFE7AFFA2]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>hospcode</remote-name>
             <remote-type>129</remote-type>
-            <local-name>[hospcode]</local-name>
-            <parent-name>[s_epi_complete_data.csv]</parent-name>
+            <local-name>[hospcode (optimized_s_epi_complete_data.csv)]</local-name>
+            <parent-name>[optimized_s_epi_complete_data.csv]</parent-name>
             <remote-alias>hospcode</remote-alias>
             <ordinal>1</ordinal>
             <local-type>string</local-type>
@@ -255,13 +213,13 @@
             <width>1073741823</width>
             <contains-null>true</contains-null>
             <collation flag='0' name='LEN_RUS' />
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[s_epi_complete_data.csv_5DF6476C4A77453E8EA2F06418AE9F02]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[optimized_s_epi_complete_data.csv_1A10D5C399AE4D05835DF5FAFE7AFFA2]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>areacode</remote-name>
             <remote-type>129</remote-type>
-            <local-name>[areacode]</local-name>
-            <parent-name>[s_epi_complete_data.csv]</parent-name>
+            <local-name>[areacode (optimized_s_epi_complete_data.csv)]</local-name>
+            <parent-name>[optimized_s_epi_complete_data.csv]</parent-name>
             <remote-alias>areacode</remote-alias>
             <ordinal>2</ordinal>
             <local-type>string</local-type>
@@ -270,344 +228,58 @@
             <width>1073741823</width>
             <contains-null>true</contains-null>
             <collation flag='0' name='LEN_RUS' />
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[s_epi_complete_data.csv_5DF6476C4A77453E8EA2F06418AE9F02]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>date_com</remote-name>
-            <remote-type>7</remote-type>
-            <local-name>[date_com]</local-name>
-            <parent-name>[s_epi_complete_data.csv]</parent-name>
-            <remote-alias>date_com</remote-alias>
-            <ordinal>3</ordinal>
-            <local-type>datetime</local-type>
-            <aggregation>Year</aggregation>
-            <contains-null>true</contains-null>
-            <collation flag='0' name='LEN_RUS' />
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[s_epi_complete_data.csv_5DF6476C4A77453E8EA2F06418AE9F02]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[optimized_s_epi_complete_data.csv_1A10D5C399AE4D05835DF5FAFE7AFFA2]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>b_year</remote-name>
-            <remote-type>20</remote-type>
-            <local-name>[b_year]</local-name>
-            <parent-name>[s_epi_complete_data.csv]</parent-name>
+            <remote-type>129</remote-type>
+            <local-name>[b_year (optimized_s_epi_complete_data.csv)]</local-name>
+            <parent-name>[optimized_s_epi_complete_data.csv]</parent-name>
             <remote-alias>b_year</remote-alias>
-            <ordinal>4</ordinal>
-            <local-type>integer</local-type>
-            <aggregation>Sum</aggregation>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
             <contains-null>true</contains-null>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[s_epi_complete_data.csv_5DF6476C4A77453E8EA2F06418AE9F02]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[optimized_s_epi_complete_data.csv_1A10D5C399AE4D05835DF5FAFE7AFFA2]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[date]</local-name>
+            <parent-name>[optimized_s_epi_complete_data.csv]</parent-name>
+            <remote-alias>date</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[optimized_s_epi_complete_data.csv_1A10D5C399AE4D05835DF5FAFE7AFFA2]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>target</remote-name>
             <remote-type>20</remote-type>
-            <local-name>[target]</local-name>
-            <parent-name>[s_epi_complete_data.csv]</parent-name>
+            <local-name>[target (optimized_s_epi_complete_data.csv)]</local-name>
+            <parent-name>[optimized_s_epi_complete_data.csv]</parent-name>
             <remote-alias>target</remote-alias>
             <ordinal>5</ordinal>
             <local-type>integer</local-type>
             <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[s_epi_complete_data.csv_5DF6476C4A77453E8EA2F06418AE9F02]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[optimized_s_epi_complete_data.csv_1A10D5C399AE4D05835DF5FAFE7AFFA2]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>result</remote-name>
             <remote-type>20</remote-type>
-            <local-name>[result]</local-name>
-            <parent-name>[s_epi_complete_data.csv]</parent-name>
+            <local-name>[result (optimized_s_epi_complete_data.csv)]</local-name>
+            <parent-name>[optimized_s_epi_complete_data.csv]</parent-name>
             <remote-alias>result</remote-alias>
             <ordinal>6</ordinal>
             <local-type>integer</local-type>
             <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[s_epi_complete_data.csv_5DF6476C4A77453E8EA2F06418AE9F02]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>target10</remote-name>
-            <remote-type>20</remote-type>
-            <local-name>[target10]</local-name>
-            <parent-name>[s_epi_complete_data.csv]</parent-name>
-            <remote-alias>target10</remote-alias>
-            <ordinal>7</ordinal>
-            <local-type>integer</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[s_epi_complete_data.csv_5DF6476C4A77453E8EA2F06418AE9F02]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>result10</remote-name>
-            <remote-type>20</remote-type>
-            <local-name>[result10]</local-name>
-            <parent-name>[s_epi_complete_data.csv]</parent-name>
-            <remote-alias>result10</remote-alias>
-            <ordinal>8</ordinal>
-            <local-type>integer</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[s_epi_complete_data.csv_5DF6476C4A77453E8EA2F06418AE9F02]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>target11</remote-name>
-            <remote-type>20</remote-type>
-            <local-name>[target11]</local-name>
-            <parent-name>[s_epi_complete_data.csv]</parent-name>
-            <remote-alias>target11</remote-alias>
-            <ordinal>9</ordinal>
-            <local-type>integer</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[s_epi_complete_data.csv_5DF6476C4A77453E8EA2F06418AE9F02]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>result11</remote-name>
-            <remote-type>20</remote-type>
-            <local-name>[result11]</local-name>
-            <parent-name>[s_epi_complete_data.csv]</parent-name>
-            <remote-alias>result11</remote-alias>
-            <ordinal>10</ordinal>
-            <local-type>integer</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[s_epi_complete_data.csv_5DF6476C4A77453E8EA2F06418AE9F02]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>target12</remote-name>
-            <remote-type>20</remote-type>
-            <local-name>[target12]</local-name>
-            <parent-name>[s_epi_complete_data.csv]</parent-name>
-            <remote-alias>target12</remote-alias>
-            <ordinal>11</ordinal>
-            <local-type>integer</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[s_epi_complete_data.csv_5DF6476C4A77453E8EA2F06418AE9F02]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>result12</remote-name>
-            <remote-type>20</remote-type>
-            <local-name>[result12]</local-name>
-            <parent-name>[s_epi_complete_data.csv]</parent-name>
-            <remote-alias>result12</remote-alias>
-            <ordinal>12</ordinal>
-            <local-type>integer</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[s_epi_complete_data.csv_5DF6476C4A77453E8EA2F06418AE9F02]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>target01</remote-name>
-            <remote-type>20</remote-type>
-            <local-name>[target01]</local-name>
-            <parent-name>[s_epi_complete_data.csv]</parent-name>
-            <remote-alias>target01</remote-alias>
-            <ordinal>13</ordinal>
-            <local-type>integer</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[s_epi_complete_data.csv_5DF6476C4A77453E8EA2F06418AE9F02]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>result01</remote-name>
-            <remote-type>20</remote-type>
-            <local-name>[result01]</local-name>
-            <parent-name>[s_epi_complete_data.csv]</parent-name>
-            <remote-alias>result01</remote-alias>
-            <ordinal>14</ordinal>
-            <local-type>integer</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[s_epi_complete_data.csv_5DF6476C4A77453E8EA2F06418AE9F02]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>target02</remote-name>
-            <remote-type>20</remote-type>
-            <local-name>[target02]</local-name>
-            <parent-name>[s_epi_complete_data.csv]</parent-name>
-            <remote-alias>target02</remote-alias>
-            <ordinal>15</ordinal>
-            <local-type>integer</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[s_epi_complete_data.csv_5DF6476C4A77453E8EA2F06418AE9F02]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>result02</remote-name>
-            <remote-type>20</remote-type>
-            <local-name>[result02]</local-name>
-            <parent-name>[s_epi_complete_data.csv]</parent-name>
-            <remote-alias>result02</remote-alias>
-            <ordinal>16</ordinal>
-            <local-type>integer</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[s_epi_complete_data.csv_5DF6476C4A77453E8EA2F06418AE9F02]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>target03</remote-name>
-            <remote-type>20</remote-type>
-            <local-name>[target03]</local-name>
-            <parent-name>[s_epi_complete_data.csv]</parent-name>
-            <remote-alias>target03</remote-alias>
-            <ordinal>17</ordinal>
-            <local-type>integer</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[s_epi_complete_data.csv_5DF6476C4A77453E8EA2F06418AE9F02]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>result03</remote-name>
-            <remote-type>20</remote-type>
-            <local-name>[result03]</local-name>
-            <parent-name>[s_epi_complete_data.csv]</parent-name>
-            <remote-alias>result03</remote-alias>
-            <ordinal>18</ordinal>
-            <local-type>integer</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[s_epi_complete_data.csv_5DF6476C4A77453E8EA2F06418AE9F02]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>target04</remote-name>
-            <remote-type>20</remote-type>
-            <local-name>[target04]</local-name>
-            <parent-name>[s_epi_complete_data.csv]</parent-name>
-            <remote-alias>target04</remote-alias>
-            <ordinal>19</ordinal>
-            <local-type>integer</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[s_epi_complete_data.csv_5DF6476C4A77453E8EA2F06418AE9F02]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>result04</remote-name>
-            <remote-type>20</remote-type>
-            <local-name>[result04]</local-name>
-            <parent-name>[s_epi_complete_data.csv]</parent-name>
-            <remote-alias>result04</remote-alias>
-            <ordinal>20</ordinal>
-            <local-type>integer</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[s_epi_complete_data.csv_5DF6476C4A77453E8EA2F06418AE9F02]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>target05</remote-name>
-            <remote-type>20</remote-type>
-            <local-name>[target05]</local-name>
-            <parent-name>[s_epi_complete_data.csv]</parent-name>
-            <remote-alias>target05</remote-alias>
-            <ordinal>21</ordinal>
-            <local-type>integer</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[s_epi_complete_data.csv_5DF6476C4A77453E8EA2F06418AE9F02]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>result05</remote-name>
-            <remote-type>20</remote-type>
-            <local-name>[result05]</local-name>
-            <parent-name>[s_epi_complete_data.csv]</parent-name>
-            <remote-alias>result05</remote-alias>
-            <ordinal>22</ordinal>
-            <local-type>integer</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[s_epi_complete_data.csv_5DF6476C4A77453E8EA2F06418AE9F02]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>target06</remote-name>
-            <remote-type>20</remote-type>
-            <local-name>[target06]</local-name>
-            <parent-name>[s_epi_complete_data.csv]</parent-name>
-            <remote-alias>target06</remote-alias>
-            <ordinal>23</ordinal>
-            <local-type>integer</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[s_epi_complete_data.csv_5DF6476C4A77453E8EA2F06418AE9F02]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>result06</remote-name>
-            <remote-type>20</remote-type>
-            <local-name>[result06]</local-name>
-            <parent-name>[s_epi_complete_data.csv]</parent-name>
-            <remote-alias>result06</remote-alias>
-            <ordinal>24</ordinal>
-            <local-type>integer</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[s_epi_complete_data.csv_5DF6476C4A77453E8EA2F06418AE9F02]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>target07</remote-name>
-            <remote-type>20</remote-type>
-            <local-name>[target07]</local-name>
-            <parent-name>[s_epi_complete_data.csv]</parent-name>
-            <remote-alias>target07</remote-alias>
-            <ordinal>25</ordinal>
-            <local-type>integer</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[s_epi_complete_data.csv_5DF6476C4A77453E8EA2F06418AE9F02]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>result07</remote-name>
-            <remote-type>20</remote-type>
-            <local-name>[result07]</local-name>
-            <parent-name>[s_epi_complete_data.csv]</parent-name>
-            <remote-alias>result07</remote-alias>
-            <ordinal>26</ordinal>
-            <local-type>integer</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[s_epi_complete_data.csv_5DF6476C4A77453E8EA2F06418AE9F02]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>target08</remote-name>
-            <remote-type>20</remote-type>
-            <local-name>[target08]</local-name>
-            <parent-name>[s_epi_complete_data.csv]</parent-name>
-            <remote-alias>target08</remote-alias>
-            <ordinal>27</ordinal>
-            <local-type>integer</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[s_epi_complete_data.csv_5DF6476C4A77453E8EA2F06418AE9F02]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>result08</remote-name>
-            <remote-type>20</remote-type>
-            <local-name>[result08]</local-name>
-            <parent-name>[s_epi_complete_data.csv]</parent-name>
-            <remote-alias>result08</remote-alias>
-            <ordinal>28</ordinal>
-            <local-type>integer</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[s_epi_complete_data.csv_5DF6476C4A77453E8EA2F06418AE9F02]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>target09</remote-name>
-            <remote-type>20</remote-type>
-            <local-name>[target09]</local-name>
-            <parent-name>[s_epi_complete_data.csv]</parent-name>
-            <remote-alias>target09</remote-alias>
-            <ordinal>29</ordinal>
-            <local-type>integer</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[s_epi_complete_data.csv_5DF6476C4A77453E8EA2F06418AE9F02]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>result09</remote-name>
-            <remote-type>20</remote-type>
-            <local-name>[result09]</local-name>
-            <parent-name>[s_epi_complete_data.csv]</parent-name>
-            <remote-alias>result09</remote-alias>
-            <ordinal>30</ordinal>
-            <local-type>integer</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[s_epi_complete_data.csv_5DF6476C4A77453E8EA2F06418AE9F02]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[optimized_s_epi_complete_data.csv_1A10D5C399AE4D05835DF5FAFE7AFFA2]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>code9</remote-name>
@@ -615,7 +287,7 @@
             <local-name>[code9]</local-name>
             <parent-name>[hospital.csv]</parent-name>
             <remote-alias>code9</remote-alias>
-            <ordinal>31</ordinal>
+            <ordinal>7</ordinal>
             <local-type>integer</local-type>
             <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
@@ -627,7 +299,7 @@
             <local-name>[code5]</local-name>
             <parent-name>[hospital.csv]</parent-name>
             <remote-alias>code5</remote-alias>
-            <ordinal>32</ordinal>
+            <ordinal>8</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <scale>1</scale>
@@ -642,7 +314,7 @@
             <local-name>[name]</local-name>
             <parent-name>[hospital.csv]</parent-name>
             <remote-alias>name</remote-alias>
-            <ordinal>33</ordinal>
+            <ordinal>9</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <scale>1</scale>
@@ -657,7 +329,7 @@
             <local-name>[prigov]</local-name>
             <parent-name>[hospital.csv]</parent-name>
             <remote-alias>prigov</remote-alias>
-            <ordinal>34</ordinal>
+            <ordinal>10</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <scale>1</scale>
@@ -672,7 +344,7 @@
             <local-name>[type]</local-name>
             <parent-name>[hospital.csv]</parent-name>
             <remote-alias>type</remote-alias>
-            <ordinal>35</ordinal>
+            <ordinal>11</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <scale>1</scale>
@@ -687,7 +359,7 @@
             <local-name>[org]</local-name>
             <parent-name>[hospital.csv]</parent-name>
             <remote-alias>org</remote-alias>
-            <ordinal>36</ordinal>
+            <ordinal>12</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <scale>1</scale>
@@ -702,7 +374,7 @@
             <local-name>[region]</local-name>
             <parent-name>[hospital.csv]</parent-name>
             <remote-alias>region</remote-alias>
-            <ordinal>37</ordinal>
+            <ordinal>13</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <scale>1</scale>
@@ -717,7 +389,7 @@
             <local-name>[provcode]</local-name>
             <parent-name>[hospital.csv]</parent-name>
             <remote-alias>provcode</remote-alias>
-            <ordinal>38</ordinal>
+            <ordinal>14</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <scale>1</scale>
@@ -732,7 +404,7 @@
             <local-name>[prov]</local-name>
             <parent-name>[hospital.csv]</parent-name>
             <remote-alias>prov</remote-alias>
-            <ordinal>39</ordinal>
+            <ordinal>15</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <scale>1</scale>
@@ -747,7 +419,7 @@
             <local-name>[distcode]</local-name>
             <parent-name>[hospital.csv]</parent-name>
             <remote-alias>distcode</remote-alias>
-            <ordinal>40</ordinal>
+            <ordinal>16</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <scale>1</scale>
@@ -762,7 +434,7 @@
             <local-name>[dist]</local-name>
             <parent-name>[hospital.csv]</parent-name>
             <remote-alias>dist</remote-alias>
-            <ordinal>41</ordinal>
+            <ordinal>17</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <scale>1</scale>
@@ -777,7 +449,7 @@
             <local-name>[subdistcode]</local-name>
             <parent-name>[hospital.csv]</parent-name>
             <remote-alias>subdistcode</remote-alias>
-            <ordinal>42</ordinal>
+            <ordinal>18</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <scale>1</scale>
@@ -792,7 +464,7 @@
             <local-name>[subdist]</local-name>
             <parent-name>[hospital.csv]</parent-name>
             <remote-alias>subdist</remote-alias>
-            <ordinal>43</ordinal>
+            <ordinal>19</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <scale>1</scale>
@@ -807,7 +479,7 @@
             <local-name>[data]</local-name>
             <parent-name>[gdf1.geojson]</parent-name>
             <remote-alias>data</remote-alias>
-            <ordinal>44</ordinal>
+            <ordinal>20</ordinal>
             <local-type>integer</local-type>
             <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
@@ -819,7 +491,7 @@
             <local-name>[zone]</local-name>
             <parent-name>[gdf1.geojson]</parent-name>
             <remote-alias>zone</remote-alias>
-            <ordinal>45</ordinal>
+            <ordinal>21</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <contains-null>true</contains-null>
@@ -832,7 +504,7 @@
             <local-name>[name (gdf1.geojson)]</local-name>
             <parent-name>[gdf1.geojson]</parent-name>
             <remote-alias>name</remote-alias>
-            <ordinal>46</ordinal>
+            <ordinal>22</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <contains-null>true</contains-null>
@@ -845,7 +517,7 @@
             <local-name>[id (gdf1.geojson)]</local-name>
             <parent-name>[gdf1.geojson]</parent-name>
             <remote-alias>id</remote-alias>
-            <ordinal>47</ordinal>
+            <ordinal>23</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <contains-null>true</contains-null>
@@ -858,7 +530,7 @@
             <local-name>[type (gdf1.geojson)]</local-name>
             <parent-name>[gdf1.geojson]</parent-name>
             <remote-alias>type</remote-alias>
-            <ordinal>48</ordinal>
+            <ordinal>24</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <contains-null>true</contains-null>
@@ -871,7 +543,7 @@
             <local-name>[Geometry]</local-name>
             <parent-name>[gdf1.geojson]</parent-name>
             <remote-alias>Geometry</remote-alias>
-            <ordinal>49</ordinal>
+            <ordinal>25</ordinal>
             <local-type>spatial</local-type>
             <aggregation>Collect</aggregation>
             <contains-null>true</contains-null>
@@ -883,7 +555,7 @@
             <local-name>[data (gdf2.geojson)]</local-name>
             <parent-name>[gdf2.geojson]</parent-name>
             <remote-alias>data</remote-alias>
-            <ordinal>50</ordinal>
+            <ordinal>26</ordinal>
             <local-type>integer</local-type>
             <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
@@ -895,7 +567,7 @@
             <local-name>[zone (gdf2.geojson)]</local-name>
             <parent-name>[gdf2.geojson]</parent-name>
             <remote-alias>zone</remote-alias>
-            <ordinal>51</ordinal>
+            <ordinal>27</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <contains-null>true</contains-null>
@@ -908,7 +580,7 @@
             <local-name>[name (gdf2.geojson)]</local-name>
             <parent-name>[gdf2.geojson]</parent-name>
             <remote-alias>name</remote-alias>
-            <ordinal>52</ordinal>
+            <ordinal>28</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <contains-null>true</contains-null>
@@ -921,7 +593,7 @@
             <local-name>[id (gdf2.geojson)]</local-name>
             <parent-name>[gdf2.geojson]</parent-name>
             <remote-alias>id</remote-alias>
-            <ordinal>53</ordinal>
+            <ordinal>29</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <contains-null>true</contains-null>
@@ -934,7 +606,7 @@
             <local-name>[type (gdf2.geojson)]</local-name>
             <parent-name>[gdf2.geojson]</parent-name>
             <remote-alias>type</remote-alias>
-            <ordinal>54</ordinal>
+            <ordinal>30</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <contains-null>true</contains-null>
@@ -947,7 +619,7 @@
             <local-name>[Geometry (gdf2.geojson)]</local-name>
             <parent-name>[gdf2.geojson]</parent-name>
             <remote-alias>Geometry</remote-alias>
-            <ordinal>55</ordinal>
+            <ordinal>31</ordinal>
             <local-type>spatial</local-type>
             <aggregation>Collect</aggregation>
             <contains-null>true</contains-null>
@@ -959,7 +631,7 @@
             <local-name>[data (gdf3.geojson)]</local-name>
             <parent-name>[gdf3.geojson]</parent-name>
             <remote-alias>data</remote-alias>
-            <ordinal>56</ordinal>
+            <ordinal>32</ordinal>
             <local-type>integer</local-type>
             <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
@@ -971,7 +643,7 @@
             <local-name>[zone (gdf3.geojson)]</local-name>
             <parent-name>[gdf3.geojson]</parent-name>
             <remote-alias>zone</remote-alias>
-            <ordinal>57</ordinal>
+            <ordinal>33</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <contains-null>true</contains-null>
@@ -984,7 +656,7 @@
             <local-name>[name (gdf3.geojson)]</local-name>
             <parent-name>[gdf3.geojson]</parent-name>
             <remote-alias>name</remote-alias>
-            <ordinal>58</ordinal>
+            <ordinal>34</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <contains-null>true</contains-null>
@@ -997,7 +669,7 @@
             <local-name>[id (gdf3.geojson)]</local-name>
             <parent-name>[gdf3.geojson]</parent-name>
             <remote-alias>id</remote-alias>
-            <ordinal>59</ordinal>
+            <ordinal>35</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <contains-null>true</contains-null>
@@ -1010,7 +682,7 @@
             <local-name>[type (gdf3.geojson)]</local-name>
             <parent-name>[gdf3.geojson]</parent-name>
             <remote-alias>type</remote-alias>
-            <ordinal>60</ordinal>
+            <ordinal>36</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <contains-null>true</contains-null>
@@ -1023,7 +695,7 @@
             <local-name>[Geometry (gdf3.geojson)]</local-name>
             <parent-name>[gdf3.geojson]</parent-name>
             <remote-alias>Geometry</remote-alias>
-            <ordinal>61</ordinal>
+            <ordinal>37</ordinal>
             <local-type>spatial</local-type>
             <aggregation>Collect</aggregation>
             <contains-null>true</contains-null>
@@ -1032,33 +704,28 @@
         </metadata-records>
       </connection>
       <aliases enabled='yes' />
+      <column caption='Completion%' datatype='real' name='[Calculation_5410723167758434304]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='[result (optimized_s_epi_complete_data.csv)] / [target (optimized_s_epi_complete_data.csv)] * 100' />
+      </column>
       <_.fcp.ObjectModelTableType.true...column caption='gdf1.geojson' datatype='table' name='[__tableau_internal_object_id__].[gdf1.geojson_0A5F582E7A5D4D99815B26F34AB7F471]' role='measure' type='quantitative' />
       <_.fcp.ObjectModelTableType.true...column caption='gdf2.geojson' datatype='table' name='[__tableau_internal_object_id__].[gdf2.geojson_A5D8EB197B0E477A9F6505B94C4BB8DA]' role='measure' type='quantitative' />
       <_.fcp.ObjectModelTableType.true...column caption='gdf3.geojson' datatype='table' name='[__tableau_internal_object_id__].[gdf3.geojson_3802FF8B831842EB97932CCF5BDE9965]' role='measure' type='quantitative' />
       <_.fcp.ObjectModelTableType.true...column caption='hospital.csv' datatype='table' name='[__tableau_internal_object_id__].[hospital.csv_009EE6E453A442208027B926982FC4BE]' role='measure' type='quantitative' />
-      <_.fcp.ObjectModelTableType.true...column caption='s_epi_complete_data.csv' datatype='table' name='[__tableau_internal_object_id__].[s_epi_complete_data.csv_5DF6476C4A77453E8EA2F06418AE9F02]' role='measure' type='quantitative' />
-      <column caption='Areacode' datatype='string' name='[areacode]' role='dimension' semantic-role='' type='nominal' />
-      <column caption='Budget Year' datatype='integer' name='[b_year]' role='dimension' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='optimized_s_epi_complete_data.csv' datatype='table' name='[__tableau_internal_object_id__].[optimized_s_epi_complete_data.csv_1A10D5C399AE4D05835DF5FAFE7AFFA2]' role='measure' type='quantitative' />
+      <column caption='Areacode (Optimized S Epi Complete Data.Csv)' datatype='string' default-format='*000' name='[areacode (optimized_s_epi_complete_data.csv)]' role='dimension' semantic-role='' type='nominal' />
+      <column caption='B Year (Optimized S Epi Complete Data.Csv)' datatype='string' name='[b_year (optimized_s_epi_complete_data.csv)]' role='dimension' type='nominal' />
       <column caption='Code5' datatype='string' name='[code5]' role='dimension' type='nominal' />
       <column caption='Code9' datatype='integer' name='[code9]' role='dimension' type='ordinal' />
       <column caption='Data (Gdf2.Geojson)' datatype='integer' name='[data (gdf2.geojson)]' role='measure' type='quantitative' />
       <column caption='Data (Gdf3.Geojson)' datatype='integer' name='[data (gdf3.geojson)]' role='measure' type='quantitative' />
       <column caption='Data' datatype='integer' name='[data]' role='measure' type='quantitative' />
-      <column caption='Date Com' datatype='datetime' name='[date_com]' role='dimension' type='quantitative' />
+      <column caption='Date' datatype='date' name='[date]' role='dimension' type='ordinal' />
       <column caption='Dist' datatype='string' name='[dist]' role='dimension' type='nominal' />
       <column caption='Distcode' datatype='string' default-role='measure' default-type='quantitative' name='[distcode]' role='dimension' type='nominal' />
-      <column caption='Hospcode' datatype='string' default-role='measure' default-type='quantitative' name='[hospcode]' role='dimension' type='nominal' />
+      <column caption='Hospcode (Optimized S Epi Complete Data.Csv)' datatype='string' default-role='measure' default-type='quantitative' name='[hospcode (optimized_s_epi_complete_data.csv)]' role='dimension' type='nominal' />
       <column caption='Id (Gdf1.Geojson)' datatype='string' name='[id (gdf1.geojson)]' role='dimension' type='nominal' />
       <column caption='Id (Gdf2.Geojson)' datatype='string' name='[id (gdf2.geojson)]' role='dimension' type='nominal' />
       <column caption='Id (Gdf3.Geojson)' datatype='string' name='[id (gdf3.geojson)]' role='dimension' type='nominal' />
-      <column caption='Id' datatype='string' name='[id]' role='dimension' type='nominal'>
-        <aliases>
-          <alias key='&quot;28dd2c7955ce926456240b2ff0100bde&quot;' value='ความครอบคลุมการได้รับวัคซีนแต่ละชนิดครบตามเกณฑ์ในเด็กอายุครบ 1 ปี (fully immunized)' />
-          <alias key='&quot;35f4a8d465e6e1edc05f3d8ab658c551&quot;' value='ความครอบคลุมการได้รับวัคซีนแต่ละชนิดครบตามเกณฑ์ในเด็กอายุครบ 2 ปี (fully immunized)' />
-          <alias key='&quot;d1fe173d08e959397adf34b1d77e88d7&quot;' value='ความครอบคลุมการได้รับวัคซีนแต่ละชนิดครบตามเกณฑ์ในเด็กอายุครบ 3 ปี (fully immunized)' />
-          <alias key='&quot;f033ab37c30201f73f142449d037028d&quot;' value='ความครอบคลุมการได้รับวัคซีนแต่ละชนิดครบตามเกณฑ์ในเด็กอายุครบ 5 ปี (fully immunized)' />
-        </aliases>
-      </column>
       <column caption='Name (Gdf1.Geojson)' datatype='string' name='[name (gdf1.geojson)]' role='dimension' type='nominal' />
       <column caption='Name (Gdf2.Geojson)' datatype='string' name='[name (gdf2.geojson)]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
       <column caption='Name (Gdf3.Geojson)' datatype='string' name='[name (gdf3.geojson)]' role='dimension' type='nominal' />
@@ -1068,34 +735,11 @@
       <column caption='Prov' datatype='string' name='[prov]' role='dimension' type='nominal' />
       <column caption='Provcode' datatype='string' default-role='measure' default-type='quantitative' name='[provcode]' role='dimension' type='nominal' />
       <column caption='Region' datatype='string' default-role='measure' default-type='quantitative' name='[region]' role='dimension' type='nominal' />
-      <column caption='Result01' datatype='integer' name='[result01]' role='measure' type='quantitative' />
-      <column caption='Result02' datatype='integer' name='[result02]' role='measure' type='quantitative' />
-      <column caption='Result03' datatype='integer' name='[result03]' role='measure' type='quantitative' />
-      <column caption='Result04' datatype='integer' name='[result04]' role='measure' type='quantitative' />
-      <column caption='Result05' datatype='integer' name='[result05]' role='measure' type='quantitative' />
-      <column caption='Result06' datatype='integer' name='[result06]' role='measure' type='quantitative' />
-      <column caption='Result07' datatype='integer' name='[result07]' role='measure' type='quantitative' />
-      <column caption='Result08' datatype='integer' name='[result08]' role='measure' type='quantitative' />
-      <column caption='Result09' datatype='integer' name='[result09]' role='measure' type='quantitative' />
-      <column caption='Result10' datatype='integer' name='[result10]' role='measure' type='quantitative' />
-      <column caption='Result11' datatype='integer' name='[result11]' role='measure' type='quantitative' />
-      <column caption='Result12' datatype='integer' name='[result12]' role='measure' type='quantitative' />
-      <column caption='Result' datatype='integer' name='[result]' role='measure' type='quantitative' />
+      <column caption='Report Name' datatype='string' name='[report_name]' role='dimension' type='nominal' />
+      <column caption='Result (Optimized S Epi Complete Data.Csv)' datatype='integer' name='[result (optimized_s_epi_complete_data.csv)]' role='measure' type='quantitative' />
       <column caption='Subdist' datatype='string' name='[subdist]' role='dimension' type='nominal' />
       <column caption='Subdistcode' datatype='string' default-role='measure' default-type='quantitative' name='[subdistcode]' role='dimension' type='nominal' />
-      <column caption='Target01' datatype='integer' name='[target01]' role='measure' type='quantitative' />
-      <column caption='Target02' datatype='integer' name='[target02]' role='measure' type='quantitative' />
-      <column caption='Target03' datatype='integer' name='[target03]' role='measure' type='quantitative' />
-      <column caption='Target04' datatype='integer' name='[target04]' role='measure' type='quantitative' />
-      <column caption='Target05' datatype='integer' name='[target05]' role='measure' type='quantitative' />
-      <column caption='Target06' datatype='integer' name='[target06]' role='measure' type='quantitative' />
-      <column caption='Target07' datatype='integer' name='[target07]' role='measure' type='quantitative' />
-      <column caption='Target08' datatype='integer' name='[target08]' role='measure' type='quantitative' />
-      <column caption='Target09' datatype='integer' name='[target09]' role='measure' type='quantitative' />
-      <column caption='Target10' datatype='integer' name='[target10]' role='measure' type='quantitative' />
-      <column caption='Target11' datatype='integer' name='[target11]' role='measure' type='quantitative' />
-      <column caption='Target12' datatype='integer' name='[target12]' role='measure' type='quantitative' />
-      <column caption='Target' datatype='integer' name='[target]' role='measure' type='quantitative' />
+      <column caption='Target (Optimized S Epi Complete Data.Csv)' datatype='integer' name='[target (optimized_s_epi_complete_data.csv)]' role='measure' type='quantitative' />
       <column caption='Type (Gdf1.Geojson)' datatype='string' name='[type (gdf1.geojson)]' role='dimension' type='nominal' />
       <column caption='Type (Gdf2.Geojson)' datatype='string' name='[type (gdf2.geojson)]' role='dimension' type='nominal' />
       <column caption='Type (Gdf3.Geojson)' datatype='string' name='[type (gdf3.geojson)]' role='dimension' type='nominal' />
@@ -1113,6 +757,15 @@
       <semantic-values>
         <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
       </semantic-values>
+      <field-sort-info field-sort-order-type='custom-order'>
+        <field-sort-custom-order field='report_name' />
+        <field-sort-custom-order field='hospcode (optimized_s_epi_complete_data.csv)' />
+        <field-sort-custom-order field='areacode (optimized_s_epi_complete_data.csv)' />
+        <field-sort-custom-order field='b_year (optimized_s_epi_complete_data.csv)' />
+        <field-sort-custom-order field='date' />
+        <field-sort-custom-order field='target (optimized_s_epi_complete_data.csv)' />
+        <field-sort-custom-order field='result (optimized_s_epi_complete_data.csv)' />
+      </field-sort-info>
       <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
         <objects>
           <object caption='gdf1.geojson' id='gdf1.geojson_0A5F582E7A5D4D99815B26F34AB7F471'>
@@ -1178,41 +831,17 @@
               </relation>
             </properties>
           </object>
-          <object caption='s_epi_complete_data.csv' id='s_epi_complete_data.csv_5DF6476C4A77453E8EA2F06418AE9F02'>
+          <object caption='optimized_s_epi_complete_data.csv' id='optimized_s_epi_complete_data.csv_1A10D5C399AE4D05835DF5FAFE7AFFA2'>
             <properties context=''>
-              <relation connection='cloudfile:googledrive-textscan.0xbletn0499xh219c44kn034pide' name='s_epi_complete_data.csv' table='[s_epi_complete_data#csv]' type='table'>
+              <relation connection='cloudfile:googledrive-textscan.1v5f2b31h8k3f11dbztnf16rqg5t' name='optimized_s_epi_complete_data.csv' table='[optimized_s_epi_complete_data#csv]' type='table'>
                 <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
-                  <column datatype='string' name='id' ordinal='0' />
+                  <column datatype='string' name='report_name' ordinal='0' />
                   <column datatype='string' name='hospcode' ordinal='1' />
                   <column datatype='string' name='areacode' ordinal='2' />
-                  <column datatype='datetime' date-parse-format='yyyyMMddHHmm' name='date_com' ordinal='3' />
-                  <column datatype='integer' name='b_year' ordinal='4' />
+                  <column datatype='string' name='b_year' ordinal='3' />
+                  <column datatype='date' name='date' ordinal='4' />
                   <column datatype='integer' name='target' ordinal='5' />
                   <column datatype='integer' name='result' ordinal='6' />
-                  <column datatype='integer' name='target10' ordinal='7' />
-                  <column datatype='integer' name='result10' ordinal='8' />
-                  <column datatype='integer' name='target11' ordinal='9' />
-                  <column datatype='integer' name='result11' ordinal='10' />
-                  <column datatype='integer' name='target12' ordinal='11' />
-                  <column datatype='integer' name='result12' ordinal='12' />
-                  <column datatype='integer' name='target01' ordinal='13' />
-                  <column datatype='integer' name='result01' ordinal='14' />
-                  <column datatype='integer' name='target02' ordinal='15' />
-                  <column datatype='integer' name='result02' ordinal='16' />
-                  <column datatype='integer' name='target03' ordinal='17' />
-                  <column datatype='integer' name='result03' ordinal='18' />
-                  <column datatype='integer' name='target04' ordinal='19' />
-                  <column datatype='integer' name='result04' ordinal='20' />
-                  <column datatype='integer' name='target05' ordinal='21' />
-                  <column datatype='integer' name='result05' ordinal='22' />
-                  <column datatype='integer' name='target06' ordinal='23' />
-                  <column datatype='integer' name='result06' ordinal='24' />
-                  <column datatype='integer' name='target07' ordinal='25' />
-                  <column datatype='integer' name='result07' ordinal='26' />
-                  <column datatype='integer' name='target08' ordinal='27' />
-                  <column datatype='integer' name='result08' ordinal='28' />
-                  <column datatype='integer' name='target09' ordinal='29' />
-                  <column datatype='integer' name='result09' ordinal='30' />
                 </columns>
               </relation>
             </properties>
@@ -1245,10 +874,10 @@
           </relationship>
           <relationship>
             <expression op='='>
-              <expression op='[hospcode]' />
+              <expression op='[hospcode (optimized_s_epi_complete_data.csv)]' />
               <expression op='[code5]' />
             </expression>
-            <first-end-point object-id='s_epi_complete_data.csv_5DF6476C4A77453E8EA2F06418AE9F02' />
+            <first-end-point object-id='optimized_s_epi_complete_data.csv_1A10D5C399AE4D05835DF5FAFE7AFFA2' />
             <second-end-point object-id='hospital.csv_009EE6E453A442208027B926982FC4BE' />
           </relationship>
         </relationships>
@@ -1259,7 +888,7 @@
     <mapsource name='Tableau' />
   </mapsources>
   <worksheets>
-    <worksheet name='Sheet 1'>
+    <worksheet name='District'>
       <table>
         <view>
           <datasources>
@@ -1269,239 +898,50 @@
             <mapsource name='Tableau' />
           </mapsources>
           <datasource-dependencies datasource='federated.15zyg2i0tmrwwk14obvmg1r9mia2'>
-            <column datatype='spatial' name='[Geometry]' role='measure' type='nominal' />
-            <column-instance column='[name (gdf1.geojson)]' derivation='Attribute' name='[attr:name (gdf1.geojson):nk]' pivot='key' type='nominal' />
-            <column-instance column='[Geometry]' derivation='Collect' name='[clct:Geometry:nk]' pivot='key' type='nominal' />
-            <column caption='Id (Gdf1.Geojson)' datatype='string' name='[id (gdf1.geojson)]' role='dimension' type='nominal' />
-            <column caption='Id' datatype='string' name='[id]' role='dimension' type='nominal'>
-              <aliases>
-                <alias key='&quot;28dd2c7955ce926456240b2ff0100bde&quot;' value='ความครอบคลุมการได้รับวัคซีนแต่ละชนิดครบตามเกณฑ์ในเด็กอายุครบ 1 ปี (fully immunized)' />
-                <alias key='&quot;35f4a8d465e6e1edc05f3d8ab658c551&quot;' value='ความครอบคลุมการได้รับวัคซีนแต่ละชนิดครบตามเกณฑ์ในเด็กอายุครบ 2 ปี (fully immunized)' />
-                <alias key='&quot;d1fe173d08e959397adf34b1d77e88d7&quot;' value='ความครอบคลุมการได้รับวัคซีนแต่ละชนิดครบตามเกณฑ์ในเด็กอายุครบ 3 ปี (fully immunized)' />
-                <alias key='&quot;f033ab37c30201f73f142449d037028d&quot;' value='ความครอบคลุมการได้รับวัคซีนแต่ละชนิดครบตามเกณฑ์ในเด็กอายุครบ 5 ปี (fully immunized)' />
-              </aliases>
+            <column caption='Completion%' datatype='real' name='[Calculation_5410723167758434304]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='[result (optimized_s_epi_complete_data.csv)] / [target (optimized_s_epi_complete_data.csv)] * 100' />
             </column>
-            <column caption='Name (Gdf1.Geojson)' datatype='string' name='[name (gdf1.geojson)]' role='dimension' type='nominal' />
-            <column-instance column='[id (gdf1.geojson)]' derivation='None' name='[none:id (gdf1.geojson):nk]' pivot='key' type='nominal' />
-            <column-instance column='[id]' derivation='None' name='[none:id:nk]' pivot='key' type='nominal' />
-            <column caption='Result' datatype='integer' name='[result]' role='measure' type='quantitative' />
-            <column-instance column='[result]' derivation='Sum' name='[sum:result:qk]' pivot='key' type='quantitative' />
-            <column-instance column='[target]' derivation='Sum' name='[sum:target:qk]' pivot='key' type='quantitative' />
-            <column caption='Target' datatype='integer' name='[target]' role='measure' type='quantitative' />
-          </datasource-dependencies>
-          <filter class='quantitative' column='[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[Longitude (generated)]' included-values='non-null' />
-          <filter class='categorical' column='[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[none:id:nk]'>
-            <groupfilter function='member' level='[none:id:nk]' member='&quot;28dd2c7955ce926456240b2ff0100bde&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
-          </filter>
-          <slices>
-            <column>[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[none:id:nk]</column>
-            <column>[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[Longitude (generated)]</column>
-          </slices>
-          <aggregation value='true' />
-        </view>
-        <style>
-          <style-rule element='map-layer'>
-            <format attr='enabled' id='admin-0-boundaries-bg-sub' value='false' />
-            <format attr='enabled' id='admin-1-boundaries-supress-bg' value='false' />
-            <format attr='enabled' id='admin-1-boundaries-sm-parents-bg' value='false' />
-            <format attr='enabled' id='admin-1-boundaries-md-parents-bg' value='false' />
-            <format attr='enabled' id='admin-1-boundaries-lg-parents-bg' value='false' />
-            <format attr='enabled' id='admin-0-boundaries-dispute-sub' value='false' />
-            <format attr='enabled' id='admin-0-boundaries-sub' value='false' />
-            <format attr='enabled' id='admin-1-boundaries-supress' value='false' />
-            <format attr='enabled' id='admin-1-boundaries-sm-parents' value='false' />
-            <format attr='enabled' id='admin-1-boundaries-md-parents' value='false' />
-            <format attr='enabled' id='admin-1-boundaries-lg-parents' value='false' />
-            <format attr='enabled' id='admin1-water-lines-usa-tableau' value='false' />
-            <format attr='enabled' id='9-dash-line-casing' value='false' />
-            <format attr='enabled' id='9-dash-line' value='false' />
-            <format attr='enabled' id='admin-0-boundaries-bg' value='false' />
-            <format attr='enabled' id='admin-0-boundaries' value='false' />
-            <format attr='enabled' id='admin-0-boundaries-dispute' value='false' />
-            <format attr='enabled' id='admin-0-label-5th-tier' value='false' />
-            <format attr='enabled' id='admin-0-label-4th-tier' value='false' />
-            <format attr='enabled' id='admin-0-label-3rd-tier' value='false' />
-            <format attr='enabled' id='admin-0-label-2nd-tier' value='false' />
-            <format attr='enabled' id='admin-0-label-1st-tier' value='false' />
-            <format attr='enabled' id='parks' value='false' />
-            <format attr='enabled' id='landcover_wood' value='false' />
-            <format attr='enabled' id='landcover_scrub' value='false' />
-            <format attr='enabled' id='landcover_grass' value='false' />
-            <format attr='enabled' id='landcover_crop' value='false' />
-          </style-rule>
-          <style-rule element='map'>
-            <format attr='washout' value='0.0' />
-          </style-rule>
-        </style>
-        <panes>
-          <pane id='1' selection-relaxation-option='selection-relaxation-allow'>
-            <view>
-              <breakdown value='auto' />
-            </view>
-            <mark class='Automatic' />
-            <encodings>
-              <lod column='[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[clct:Geometry:nk]' />
-              <lod column='[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[none:id (gdf1.geojson):nk]' />
-              <lod column='[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[sum:target:qk]' />
-              <lod column='[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[sum:result:qk]' />
-              <tooltip column='[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[attr:name (gdf1.geojson):nk]' />
-              <geometry column='[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[clct:Geometry:nk]' />
-            </encodings>
-          </pane>
-        </panes>
-        <rows>[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[Latitude (generated)]</rows>
-        <cols>[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[Longitude (generated)]</cols>
-      </table>
-      <simple-id uuid='{3FAAE4C8-6E0D-4EB8-BB07-A5A38819E7E0}' />
-    </worksheet>
-    <worksheet name='Sheet 1 (2)'>
-      <table>
-        <view>
-          <datasources>
-            <datasource caption='s_epi_complete_data.csv+ (Multiple Connections)' name='federated.15zyg2i0tmrwwk14obvmg1r9mia2' />
-          </datasources>
-          <mapsources>
-            <mapsource name='Tableau' />
-          </mapsources>
-          <datasource-dependencies datasource='federated.15zyg2i0tmrwwk14obvmg1r9mia2'>
-            <column datatype='spatial' name='[Geometry (gdf2.geojson)]' role='measure' type='nominal' />
-            <column-instance column='[name (gdf1.geojson)]' derivation='Attribute' name='[attr:name (gdf1.geojson):nk]' pivot='key' type='nominal' />
-            <column-instance column='[name (gdf2.geojson)]' derivation='Attribute' name='[attr:name (gdf2.geojson):nk]' pivot='key' type='nominal' />
-            <column-instance column='[Geometry (gdf2.geojson)]' derivation='Collect' name='[clct:Geometry (gdf2.geojson):nk]' pivot='key' type='nominal' />
-            <column caption='Id (Gdf2.Geojson)' datatype='string' name='[id (gdf2.geojson)]' role='dimension' type='nominal' />
-            <column caption='Id' datatype='string' name='[id]' role='dimension' type='nominal'>
-              <aliases>
-                <alias key='&quot;28dd2c7955ce926456240b2ff0100bde&quot;' value='ความครอบคลุมการได้รับวัคซีนแต่ละชนิดครบตามเกณฑ์ในเด็กอายุครบ 1 ปี (fully immunized)' />
-                <alias key='&quot;35f4a8d465e6e1edc05f3d8ab658c551&quot;' value='ความครอบคลุมการได้รับวัคซีนแต่ละชนิดครบตามเกณฑ์ในเด็กอายุครบ 2 ปี (fully immunized)' />
-                <alias key='&quot;d1fe173d08e959397adf34b1d77e88d7&quot;' value='ความครอบคลุมการได้รับวัคซีนแต่ละชนิดครบตามเกณฑ์ในเด็กอายุครบ 3 ปี (fully immunized)' />
-                <alias key='&quot;f033ab37c30201f73f142449d037028d&quot;' value='ความครอบคลุมการได้รับวัคซีนแต่ละชนิดครบตามเกณฑ์ในเด็กอายุครบ 5 ปี (fully immunized)' />
-              </aliases>
-            </column>
-            <column caption='Name (Gdf1.Geojson)' datatype='string' name='[name (gdf1.geojson)]' role='dimension' type='nominal' />
-            <column caption='Name (Gdf2.Geojson)' datatype='string' name='[name (gdf2.geojson)]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
-            <column-instance column='[id (gdf2.geojson)]' derivation='None' name='[none:id (gdf2.geojson):nk]' pivot='key' type='nominal' />
-            <column-instance column='[id]' derivation='None' name='[none:id:nk]' pivot='key' type='nominal' />
-            <column caption='Result' datatype='integer' name='[result]' role='measure' type='quantitative' />
-            <column-instance column='[result]' derivation='Sum' name='[sum:result:qk]' pivot='key' type='quantitative' />
-            <column-instance column='[target]' derivation='Sum' name='[sum:target:qk]' pivot='key' type='quantitative' />
-            <column caption='Target' datatype='integer' name='[target]' role='measure' type='quantitative' />
-          </datasource-dependencies>
-          <filter class='quantitative' column='[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[Longitude (generated)]' included-values='non-null' />
-          <filter class='categorical' column='[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[none:id:nk]'>
-            <groupfilter function='member' level='[none:id:nk]' member='&quot;28dd2c7955ce926456240b2ff0100bde&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
-          </filter>
-          <slices>
-            <column>[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[none:id:nk]</column>
-            <column>[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[Longitude (generated)]</column>
-          </slices>
-          <aggregation value='true' />
-        </view>
-        <style>
-          <style-rule element='map-layer'>
-            <format attr='enabled' id='admin-0-boundaries-bg-sub' value='false' />
-            <format attr='enabled' id='admin-1-boundaries-supress-bg' value='false' />
-            <format attr='enabled' id='admin-1-boundaries-sm-parents-bg' value='false' />
-            <format attr='enabled' id='admin-1-boundaries-md-parents-bg' value='false' />
-            <format attr='enabled' id='admin-1-boundaries-lg-parents-bg' value='false' />
-            <format attr='enabled' id='admin-0-boundaries-dispute-sub' value='false' />
-            <format attr='enabled' id='admin-0-boundaries-sub' value='false' />
-            <format attr='enabled' id='admin-1-boundaries-supress' value='false' />
-            <format attr='enabled' id='admin-1-boundaries-sm-parents' value='false' />
-            <format attr='enabled' id='admin-1-boundaries-md-parents' value='false' />
-            <format attr='enabled' id='admin-1-boundaries-lg-parents' value='false' />
-            <format attr='enabled' id='admin1-water-lines-usa-tableau' value='false' />
-            <format attr='enabled' id='9-dash-line-casing' value='false' />
-            <format attr='enabled' id='9-dash-line' value='false' />
-            <format attr='enabled' id='admin-0-boundaries-bg' value='false' />
-            <format attr='enabled' id='admin-0-boundaries' value='false' />
-            <format attr='enabled' id='admin-0-boundaries-dispute' value='false' />
-            <format attr='enabled' id='admin-0-label-5th-tier' value='false' />
-            <format attr='enabled' id='admin-0-label-4th-tier' value='false' />
-            <format attr='enabled' id='admin-0-label-3rd-tier' value='false' />
-            <format attr='enabled' id='admin-0-label-2nd-tier' value='false' />
-            <format attr='enabled' id='admin-0-label-1st-tier' value='false' />
-            <format attr='enabled' id='parks' value='false' />
-            <format attr='enabled' id='landcover_wood' value='false' />
-            <format attr='enabled' id='landcover_scrub' value='false' />
-            <format attr='enabled' id='landcover_grass' value='false' />
-            <format attr='enabled' id='landcover_crop' value='false' />
-          </style-rule>
-          <style-rule element='map'>
-            <format attr='washout' value='0.0' />
-          </style-rule>
-        </style>
-        <panes>
-          <pane id='1' selection-relaxation-option='selection-relaxation-allow'>
-            <view>
-              <breakdown value='auto' />
-            </view>
-            <mark class='Automatic' />
-            <encodings>
-              <lod column='[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[clct:Geometry (gdf2.geojson):nk]' />
-              <lod column='[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[none:id (gdf2.geojson):nk]' />
-              <tooltip column='[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[attr:name (gdf2.geojson):nk]' />
-              <tooltip column='[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[attr:name (gdf1.geojson):nk]' />
-              <lod column='[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[sum:target:qk]' />
-              <lod column='[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[sum:result:qk]' />
-              <geometry column='[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[clct:Geometry (gdf2.geojson):nk]' />
-            </encodings>
-            <style>
-              <style-rule element='mark'>
-                <format attr='mark-color' value='#75a1c7' />
-              </style-rule>
-            </style>
-          </pane>
-        </panes>
-        <rows>[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[Latitude (generated)]</rows>
-        <cols>[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[Longitude (generated)]</cols>
-      </table>
-      <simple-id uuid='{2BC8E5D4-7CD5-4DD1-BE73-88DAB568FDF4}' />
-    </worksheet>
-    <worksheet name='Sheet 1 (3)'>
-      <table>
-        <view>
-          <datasources>
-            <datasource caption='s_epi_complete_data.csv+ (Multiple Connections)' name='federated.15zyg2i0tmrwwk14obvmg1r9mia2' />
-          </datasources>
-          <mapsources>
-            <mapsource name='Tableau' />
-          </mapsources>
-          <datasource-dependencies datasource='federated.15zyg2i0tmrwwk14obvmg1r9mia2'>
             <column datatype='spatial' name='[Geometry (gdf3.geojson)]' role='measure' type='nominal' />
             <column-instance column='[name (gdf1.geojson)]' derivation='Attribute' name='[attr:name (gdf1.geojson):nk]' pivot='key' type='nominal' />
             <column-instance column='[name (gdf2.geojson)]' derivation='Attribute' name='[attr:name (gdf2.geojson):nk]' pivot='key' type='nominal' />
             <column-instance column='[name (gdf3.geojson)]' derivation='Attribute' name='[attr:name (gdf3.geojson):nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_5410723167758434304]' derivation='Avg' name='[avg:Calculation_5410723167758434304:qk]' pivot='key' type='quantitative' />
             <column-instance column='[Geometry (gdf3.geojson)]' derivation='Collect' name='[clct:Geometry (gdf3.geojson):nk]' pivot='key' type='nominal' />
+            <column caption='Date' datatype='date' name='[date]' role='dimension' type='ordinal' />
             <column caption='Id (Gdf3.Geojson)' datatype='string' name='[id (gdf3.geojson)]' role='dimension' type='nominal' />
-            <column caption='Id' datatype='string' name='[id]' role='dimension' type='nominal'>
-              <aliases>
-                <alias key='&quot;28dd2c7955ce926456240b2ff0100bde&quot;' value='ความครอบคลุมการได้รับวัคซีนแต่ละชนิดครบตามเกณฑ์ในเด็กอายุครบ 1 ปี (fully immunized)' />
-                <alias key='&quot;35f4a8d465e6e1edc05f3d8ab658c551&quot;' value='ความครอบคลุมการได้รับวัคซีนแต่ละชนิดครบตามเกณฑ์ในเด็กอายุครบ 2 ปี (fully immunized)' />
-                <alias key='&quot;d1fe173d08e959397adf34b1d77e88d7&quot;' value='ความครอบคลุมการได้รับวัคซีนแต่ละชนิดครบตามเกณฑ์ในเด็กอายุครบ 3 ปี (fully immunized)' />
-                <alias key='&quot;f033ab37c30201f73f142449d037028d&quot;' value='ความครอบคลุมการได้รับวัคซีนแต่ละชนิดครบตามเกณฑ์ในเด็กอายุครบ 5 ปี (fully immunized)' />
-              </aliases>
-            </column>
             <column caption='Name (Gdf1.Geojson)' datatype='string' name='[name (gdf1.geojson)]' role='dimension' type='nominal' />
             <column caption='Name (Gdf2.Geojson)' datatype='string' name='[name (gdf2.geojson)]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
             <column caption='Name (Gdf3.Geojson)' datatype='string' name='[name (gdf3.geojson)]' role='dimension' type='nominal' />
             <column-instance column='[id (gdf3.geojson)]' derivation='None' name='[none:id (gdf3.geojson):nk]' pivot='key' type='nominal' />
-            <column-instance column='[id]' derivation='None' name='[none:id:nk]' pivot='key' type='nominal' />
-            <column caption='Result' datatype='integer' name='[result]' role='measure' type='quantitative' />
-            <column-instance column='[result]' derivation='Sum' name='[sum:result:qk]' pivot='key' type='quantitative' />
-            <column-instance column='[target]' derivation='Sum' name='[sum:target:qk]' pivot='key' type='quantitative' />
-            <column caption='Target' datatype='integer' name='[target]' role='measure' type='quantitative' />
+            <column-instance column='[report_name]' derivation='None' name='[none:report_name:nk]' pivot='key' type='nominal' />
+            <column-instance column='[date]' derivation='Quarter' name='[qr:date:ok]' pivot='key' type='ordinal' />
+            <column caption='Report Name' datatype='string' name='[report_name]' role='dimension' type='nominal' />
+            <column caption='Result (Optimized S Epi Complete Data.Csv)' datatype='integer' name='[result (optimized_s_epi_complete_data.csv)]' role='measure' type='quantitative' />
+            <column-instance column='[result (optimized_s_epi_complete_data.csv)]' derivation='Sum' name='[sum:result (optimized_s_epi_complete_data.csv):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[target (optimized_s_epi_complete_data.csv)]' derivation='Sum' name='[sum:target (optimized_s_epi_complete_data.csv):qk]' pivot='key' type='quantitative' />
+            <column caption='Target (Optimized S Epi Complete Data.Csv)' datatype='integer' name='[target (optimized_s_epi_complete_data.csv)]' role='measure' type='quantitative' />
           </datasource-dependencies>
           <filter class='quantitative' column='[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[Longitude (generated)]' included-values='non-null' />
-          <filter class='categorical' column='[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[none:id:nk]'>
-            <groupfilter function='member' level='[none:id:nk]' member='&quot;28dd2c7955ce926456240b2ff0100bde&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          <filter class='categorical' column='[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[none:report_name:nk]'>
+            <groupfilter function='member' level='[none:report_name:nk]' member='&quot;1yr&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[qr:date:ok]'>
+            <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[qr:date:ok]' member='1' />
+              <groupfilter function='member' level='[qr:date:ok]' member='4' />
+            </groupfilter>
           </filter>
           <slices>
-            <column>[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[none:id:nk]</column>
+            <column>[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[qr:date:ok]</column>
+            <column>[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[none:report_name:nk]</column>
             <column>[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[Longitude (generated)]</column>
           </slices>
           <aggregation value='true' />
         </view>
         <style>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[avg:Calculation_5410723167758434304:qk]' max='100.0' min='80.0' num-steps='5' palette='red_green_gold_diverging_10_0' symmetric='false' type='interpolated' />
+          </style-rule>
           <style-rule element='map-layer'>
             <format attr='enabled' id='admin-0-boundaries-bg-sub' value='false' />
             <format attr='enabled' id='admin-1-boundaries-supress-bg' value='false' />
@@ -1542,13 +982,14 @@
             </view>
             <mark class='Automatic' />
             <encodings>
+              <color column='[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[avg:Calculation_5410723167758434304:qk]' />
               <lod column='[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[clct:Geometry (gdf3.geojson):nk]' />
               <lod column='[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[none:id (gdf3.geojson):nk]' />
               <tooltip column='[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[attr:name (gdf3.geojson):nk]' />
               <tooltip column='[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[attr:name (gdf1.geojson):nk]' />
               <tooltip column='[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[attr:name (gdf2.geojson):nk]' />
-              <lod column='[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[sum:target:qk]' />
-              <lod column='[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[sum:result:qk]' />
+              <lod column='[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[sum:result (optimized_s_epi_complete_data.csv):qk]' />
+              <lod column='[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[sum:target (optimized_s_epi_complete_data.csv):qk]' />
               <geometry column='[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[clct:Geometry (gdf3.geojson):nk]' />
             </encodings>
             <style>
@@ -1563,29 +1004,251 @@
       </table>
       <simple-id uuid='{04AD609D-1E7B-4BFC-B33E-1B2F8BBB29A9}' />
     </worksheet>
-    <worksheet name='Sheet 4'>
+    <worksheet name='Province'>
       <table>
         <view>
-          <datasources />
+          <datasources>
+            <datasource caption='s_epi_complete_data.csv+ (Multiple Connections)' name='federated.15zyg2i0tmrwwk14obvmg1r9mia2' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.15zyg2i0tmrwwk14obvmg1r9mia2'>
+            <column caption='Completion%' datatype='real' name='[Calculation_5410723167758434304]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='[result (optimized_s_epi_complete_data.csv)] / [target (optimized_s_epi_complete_data.csv)] * 100' />
+            </column>
+            <column datatype='spatial' name='[Geometry (gdf2.geojson)]' role='measure' type='nominal' />
+            <column-instance column='[name (gdf1.geojson)]' derivation='Attribute' name='[attr:name (gdf1.geojson):nk]' pivot='key' type='nominal' />
+            <column-instance column='[name (gdf2.geojson)]' derivation='Attribute' name='[attr:name (gdf2.geojson):nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_5410723167758434304]' derivation='Avg' name='[avg:Calculation_5410723167758434304:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Geometry (gdf2.geojson)]' derivation='Collect' name='[clct:Geometry (gdf2.geojson):nk]' pivot='key' type='nominal' />
+            <column caption='Date' datatype='date' name='[date]' role='dimension' type='ordinal' />
+            <column caption='Id (Gdf2.Geojson)' datatype='string' name='[id (gdf2.geojson)]' role='dimension' type='nominal' />
+            <column caption='Name (Gdf1.Geojson)' datatype='string' name='[name (gdf1.geojson)]' role='dimension' type='nominal' />
+            <column caption='Name (Gdf2.Geojson)' datatype='string' name='[name (gdf2.geojson)]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+            <column-instance column='[id (gdf2.geojson)]' derivation='None' name='[none:id (gdf2.geojson):nk]' pivot='key' type='nominal' />
+            <column-instance column='[report_name]' derivation='None' name='[none:report_name:nk]' pivot='key' type='nominal' />
+            <column-instance column='[date]' derivation='Quarter' name='[qr:date:ok]' pivot='key' type='ordinal' />
+            <column caption='Report Name' datatype='string' name='[report_name]' role='dimension' type='nominal' />
+            <column caption='Result (Optimized S Epi Complete Data.Csv)' datatype='integer' name='[result (optimized_s_epi_complete_data.csv)]' role='measure' type='quantitative' />
+            <column-instance column='[result (optimized_s_epi_complete_data.csv)]' derivation='Sum' name='[sum:result (optimized_s_epi_complete_data.csv):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[target (optimized_s_epi_complete_data.csv)]' derivation='Sum' name='[sum:target (optimized_s_epi_complete_data.csv):qk]' pivot='key' type='quantitative' />
+            <column caption='Target (Optimized S Epi Complete Data.Csv)' datatype='integer' name='[target (optimized_s_epi_complete_data.csv)]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='quantitative' column='[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[Longitude (generated)]' included-values='non-null' />
+          <filter class='categorical' column='[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[none:report_name:nk]'>
+            <groupfilter function='member' level='[none:report_name:nk]' member='&quot;1yr&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[qr:date:ok]'>
+            <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[qr:date:ok]' member='1' />
+              <groupfilter function='member' level='[qr:date:ok]' member='4' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[qr:date:ok]</column>
+            <column>[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[none:report_name:nk]</column>
+            <column>[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[Longitude (generated)]</column>
+          </slices>
           <aggregation value='true' />
         </view>
-        <style />
+        <style>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[avg:Calculation_5410723167758434304:qk]' max='100.0' min='80.0' num-steps='5' palette='red_green_gold_diverging_10_0' symmetric='false' type='interpolated' />
+          </style-rule>
+          <style-rule element='map-layer'>
+            <format attr='enabled' id='admin-0-boundaries-bg-sub' value='false' />
+            <format attr='enabled' id='admin-1-boundaries-supress-bg' value='false' />
+            <format attr='enabled' id='admin-1-boundaries-sm-parents-bg' value='false' />
+            <format attr='enabled' id='admin-1-boundaries-md-parents-bg' value='false' />
+            <format attr='enabled' id='admin-1-boundaries-lg-parents-bg' value='false' />
+            <format attr='enabled' id='admin-0-boundaries-dispute-sub' value='false' />
+            <format attr='enabled' id='admin-0-boundaries-sub' value='false' />
+            <format attr='enabled' id='admin-1-boundaries-supress' value='false' />
+            <format attr='enabled' id='admin-1-boundaries-sm-parents' value='false' />
+            <format attr='enabled' id='admin-1-boundaries-md-parents' value='false' />
+            <format attr='enabled' id='admin-1-boundaries-lg-parents' value='false' />
+            <format attr='enabled' id='admin1-water-lines-usa-tableau' value='false' />
+            <format attr='enabled' id='9-dash-line-casing' value='false' />
+            <format attr='enabled' id='9-dash-line' value='false' />
+            <format attr='enabled' id='admin-0-boundaries-bg' value='false' />
+            <format attr='enabled' id='admin-0-boundaries' value='false' />
+            <format attr='enabled' id='admin-0-boundaries-dispute' value='false' />
+            <format attr='enabled' id='admin-0-label-5th-tier' value='false' />
+            <format attr='enabled' id='admin-0-label-4th-tier' value='false' />
+            <format attr='enabled' id='admin-0-label-3rd-tier' value='false' />
+            <format attr='enabled' id='admin-0-label-2nd-tier' value='false' />
+            <format attr='enabled' id='admin-0-label-1st-tier' value='false' />
+            <format attr='enabled' id='parks' value='false' />
+            <format attr='enabled' id='landcover_wood' value='false' />
+            <format attr='enabled' id='landcover_scrub' value='false' />
+            <format attr='enabled' id='landcover_grass' value='false' />
+            <format attr='enabled' id='landcover_crop' value='false' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
         <panes>
-          <pane selection-relaxation-option='selection-relaxation-allow'>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow'>
             <view>
               <breakdown value='auto' />
             </view>
             <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[avg:Calculation_5410723167758434304:qk]' />
+              <lod column='[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[clct:Geometry (gdf2.geojson):nk]' />
+              <lod column='[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[none:id (gdf2.geojson):nk]' />
+              <tooltip column='[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[attr:name (gdf2.geojson):nk]' />
+              <tooltip column='[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[attr:name (gdf1.geojson):nk]' />
+              <lod column='[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[sum:result (optimized_s_epi_complete_data.csv):qk]' />
+              <lod column='[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[sum:target (optimized_s_epi_complete_data.csv):qk]' />
+              <geometry column='[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[clct:Geometry (gdf2.geojson):nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-color' value='#75a1c7' />
+              </style-rule>
+            </style>
           </pane>
         </panes>
-        <rows />
-        <cols />
+        <rows>[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[Latitude (generated)]</rows>
+        <cols>[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[Longitude (generated)]</cols>
       </table>
-      <simple-id uuid='{CFD1646E-3287-4EC3-96B5-ED5E166D16EB}' />
+      <simple-id uuid='{2BC8E5D4-7CD5-4DD1-BE73-88DAB568FDF4}' />
+    </worksheet>
+    <worksheet name='Region'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='s_epi_complete_data.csv+ (Multiple Connections)' name='federated.15zyg2i0tmrwwk14obvmg1r9mia2' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.15zyg2i0tmrwwk14obvmg1r9mia2'>
+            <column caption='Completion%' datatype='real' name='[Calculation_5410723167758434304]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='[result (optimized_s_epi_complete_data.csv)] / [target (optimized_s_epi_complete_data.csv)] * 100' />
+            </column>
+            <column datatype='spatial' name='[Geometry]' role='measure' type='nominal' />
+            <column-instance column='[name (gdf1.geojson)]' derivation='Attribute' name='[attr:name (gdf1.geojson):nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_5410723167758434304]' derivation='Avg' name='[avg:Calculation_5410723167758434304:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Geometry]' derivation='Collect' name='[clct:Geometry:nk]' pivot='key' type='nominal' />
+            <column caption='Date' datatype='date' name='[date]' role='dimension' type='ordinal' />
+            <column caption='Id (Gdf1.Geojson)' datatype='string' name='[id (gdf1.geojson)]' role='dimension' type='nominal' />
+            <column caption='Name (Gdf1.Geojson)' datatype='string' name='[name (gdf1.geojson)]' role='dimension' type='nominal' />
+            <column-instance column='[id (gdf1.geojson)]' derivation='None' name='[none:id (gdf1.geojson):nk]' pivot='key' type='nominal' />
+            <column-instance column='[report_name]' derivation='None' name='[none:report_name:nk]' pivot='key' type='nominal' />
+            <column-instance column='[date]' derivation='Quarter' name='[qr:date:ok]' pivot='key' type='ordinal' />
+            <column caption='Report Name' datatype='string' name='[report_name]' role='dimension' type='nominal' />
+            <column caption='Result (Optimized S Epi Complete Data.Csv)' datatype='integer' name='[result (optimized_s_epi_complete_data.csv)]' role='measure' type='quantitative' />
+            <column-instance column='[result (optimized_s_epi_complete_data.csv)]' derivation='Sum' name='[sum:result (optimized_s_epi_complete_data.csv):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[target (optimized_s_epi_complete_data.csv)]' derivation='Sum' name='[sum:target (optimized_s_epi_complete_data.csv):qk]' pivot='key' type='quantitative' />
+            <column caption='Target (Optimized S Epi Complete Data.Csv)' datatype='integer' name='[target (optimized_s_epi_complete_data.csv)]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='quantitative' column='[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[Longitude (generated)]' included-values='non-null' />
+          <filter class='categorical' column='[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[none:report_name:nk]'>
+            <groupfilter function='member' level='[none:report_name:nk]' member='&quot;1yr&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[qr:date:ok]'>
+            <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[qr:date:ok]' member='1' />
+              <groupfilter function='member' level='[qr:date:ok]' member='4' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[none:report_name:nk]</column>
+            <column>[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[Longitude (generated)]</column>
+            <column>[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[qr:date:ok]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[avg:Calculation_5410723167758434304:qk]' max='100.0' min='80.0' num-steps='5' palette='red_green_gold_diverging_10_0' type='interpolated' />
+          </style-rule>
+          <style-rule element='map-layer'>
+            <format attr='enabled' id='admin-0-boundaries-bg-sub' value='false' />
+            <format attr='enabled' id='admin-1-boundaries-supress-bg' value='false' />
+            <format attr='enabled' id='admin-1-boundaries-sm-parents-bg' value='false' />
+            <format attr='enabled' id='admin-1-boundaries-md-parents-bg' value='false' />
+            <format attr='enabled' id='admin-1-boundaries-lg-parents-bg' value='false' />
+            <format attr='enabled' id='admin-0-boundaries-dispute-sub' value='false' />
+            <format attr='enabled' id='admin-0-boundaries-sub' value='false' />
+            <format attr='enabled' id='admin-1-boundaries-supress' value='false' />
+            <format attr='enabled' id='admin-1-boundaries-sm-parents' value='false' />
+            <format attr='enabled' id='admin-1-boundaries-md-parents' value='false' />
+            <format attr='enabled' id='admin-1-boundaries-lg-parents' value='false' />
+            <format attr='enabled' id='admin1-water-lines-usa-tableau' value='false' />
+            <format attr='enabled' id='9-dash-line-casing' value='false' />
+            <format attr='enabled' id='9-dash-line' value='false' />
+            <format attr='enabled' id='admin-0-boundaries-bg' value='false' />
+            <format attr='enabled' id='admin-0-boundaries' value='false' />
+            <format attr='enabled' id='admin-0-boundaries-dispute' value='false' />
+            <format attr='enabled' id='admin-0-label-5th-tier' value='false' />
+            <format attr='enabled' id='admin-0-label-4th-tier' value='false' />
+            <format attr='enabled' id='admin-0-label-3rd-tier' value='false' />
+            <format attr='enabled' id='admin-0-label-2nd-tier' value='false' />
+            <format attr='enabled' id='admin-0-label-1st-tier' value='false' />
+            <format attr='enabled' id='parks' value='false' />
+            <format attr='enabled' id='landcover_wood' value='false' />
+            <format attr='enabled' id='landcover_scrub' value='false' />
+            <format attr='enabled' id='landcover_grass' value='false' />
+            <format attr='enabled' id='landcover_crop' value='false' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[avg:Calculation_5410723167758434304:qk]' />
+              <lod column='[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[clct:Geometry:nk]' />
+              <lod column='[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[none:id (gdf1.geojson):nk]' />
+              <lod column='[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[sum:result (optimized_s_epi_complete_data.csv):qk]' />
+              <lod column='[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[sum:target (optimized_s_epi_complete_data.csv):qk]' />
+              <tooltip column='[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[attr:name (gdf1.geojson):nk]' />
+              <geometry column='[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[clct:Geometry:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[Latitude (generated)]</rows>
+        <cols>[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[Longitude (generated)]</cols>
+      </table>
+      <simple-id uuid='{3FAAE4C8-6E0D-4EB8-BB07-A5A38819E7E0}' />
     </worksheet>
   </worksheets>
+  <dashboards>
+    <dashboard _.fcp.AccessibleZoneTabOrder.true...enable-sort-zone-taborder='true' name='s-epi-complete'>
+      <style />
+      <size maxheight='800' maxwidth='1000' minheight='800' minwidth='1000' />
+      <zones />
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='700' minheight='700' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='2' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='84000' id='1' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000' />
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{64E046F3-F185-4FD9-A8F3-09C1A68A73DE}' />
+    </dashboard>
+  </dashboards>
   <windows source-height='30'>
-    <window class='worksheet' name='Sheet 1'>
+    <window class='worksheet' name='Region'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -1603,12 +1266,18 @@
           </strip>
           <strip size='31'>
             <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[qr:date:ok]' type='filter' />
+            <card pane-specification-id='1' param='[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[avg:Calculation_5410723167758434304:qk]' type='color' />
           </strip>
         </edge>
       </cards>
       <simple-id uuid='{401490BB-DCCF-4C9A-A7EE-F0ACBC0AE17B}' />
     </window>
-    <window class='worksheet' maximized='true' name='Sheet 1 (2)'>
+    <window class='worksheet' name='Province'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -1626,12 +1295,18 @@
           </strip>
           <strip size='31'>
             <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[qr:date:ok]' type='filter' />
+            <card pane-specification-id='1' param='[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[avg:Calculation_5410723167758434304:qk]' type='color' />
           </strip>
         </edge>
       </cards>
       <simple-id uuid='{EAD08AE5-B615-44C3-ACE1-9E675F90C84E}' />
     </window>
-    <window class='worksheet' name='Sheet 1 (3)'>
+    <window class='worksheet' maximized='true' name='District'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -1651,31 +1326,22 @@
             <card type='title' />
           </strip>
         </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[qr:date:ok]' type='filter' />
+            <card pane-specification-id='1' param='[federated.15zyg2i0tmrwwk14obvmg1r9mia2].[avg:Calculation_5410723167758434304:qk]' type='color' />
+          </strip>
+        </edge>
       </cards>
+      <viewpoint>
+        <default-map-tool-selection tool='1' />
+      </viewpoint>
       <simple-id uuid='{D19E73E0-D929-403D-A4A8-3922A413926B}' />
     </window>
-    <window class='worksheet' name='Sheet 4'>
-      <cards>
-        <edge name='left'>
-          <strip size='160'>
-            <card type='pages' />
-            <card type='filters' />
-            <card type='marks' />
-          </strip>
-        </edge>
-        <edge name='top'>
-          <strip size='2147483647'>
-            <card type='columns' />
-          </strip>
-          <strip size='2147483647'>
-            <card type='rows' />
-          </strip>
-          <strip size='31'>
-            <card type='title' />
-          </strip>
-        </edge>
-      </cards>
-      <simple-id uuid='{9A926442-FA3C-4FC1-8038-931702FD078E}' />
+    <window class='dashboard' name='s-epi-complete'>
+      <viewpoints />
+      <active id='-1' />
+      <simple-id uuid='{8D217CEC-01F1-4875-A074-87D89DA5E029}' />
     </window>
   </windows>
 </workbook>
