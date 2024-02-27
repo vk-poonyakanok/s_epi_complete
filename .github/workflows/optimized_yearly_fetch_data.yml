@@ -3,7 +3,7 @@ name: Automate Optimized Yearly Data Refresh
 on:
   workflow_dispatch: # This line allows manual triggering
   schedule:
-    - cron: '0 0 4 1 *' # Schedules the job to run at 00:00 UTC on January 4th every year
+    #- cron: '0 0 4 1 *' # Schedules the job to run at 00:00 UTC on January 4th every year
 
 jobs:
   automate-task:
