@@ -1,0 +1,31 @@
+name: Automate Optimized Yearly Data Refresh
+
+on:
+  workflow_dispatch: # This line allows manual triggering
+  schedule:
+    - cron: '0 0 4 1 *' # Schedules the job to run at 00:00 UTC on January 4th every year
+
+jobs:
+  automate-task:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3 # Updated to v3 for Node.js 20 support
+
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.8'
+
+      - name: Install dependencies
+        run: |
+          pip install google-api-python-client google-auth google-auth-httplib2 google-auth-oauthlib pandas requests
+
+      - name: Decode GCP Service Account Key
+        run: |
+          echo "${{ secrets.GCP_SA_KEY }}" | base64 -d > gcp_service_account.json
+        shell: bash
+
+      - name: Run Script
+        run: python optimized_yearly_fetch_data.py
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS: ${{ github.workspace }}/gcp_service_account.json
