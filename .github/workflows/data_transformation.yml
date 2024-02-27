@@ -1,0 +1,32 @@
+name: Data Transformation Workflow after Yearly fetch
+
+on:
+  workflow_dispatch: # Allows manual trigger
+  schedule:
+    - cron: '0 0 5 1 *' # Schedules the job to run at 00:00 UTC on January 5th every year
+
+jobs:
+  automate_transform_yearly_data:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v3
+      with:
+        python-version: '3.8'
+
+    - name: Install dependencies
+      run: |
+        pip install pandas google-auth google-auth-oauthlib google-auth-httplib2 google-api-python-client
+
+    - name: Decode GCP Service Account Key
+      run: |
+        echo "${{ secrets.GCP_SA_KEY }}" | base64 -d > gcp_service_account.json
+      shell: bash
+
+    - name: Run data transformation script
+      run: python transform_data.py
+      env:
+        GOOGLE_APPLICATION_CREDENTIALS: ${{ github.workspace }}/gcp_service_account.json

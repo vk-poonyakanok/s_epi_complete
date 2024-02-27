@@ -102,5 +102,5 @@ if __name__ == '__main__':
     fetch_data_and_save()
     # Upload to Google Drive folder ID '1kUloOi3JWbV-ukH1OfpvN-S5lKt2_VND'
     # Specify the existing file ID here to update the file ID '1Fh6eRGpc3vAWJjwPdk85RXuK6C6NRB1Y' instead of uploading as new
-    upload_to_drive('s_epi_complete_data_all.csv', '1kUloOi3JWbV-ukH1OfpvN-S5lKt2_VND', '1Fh6eRGpc3vAWJjwPdk85RXuK6C6NRB1Y')
+    upload_to_drive('optimized_s_epi_complete_data_all.csv', '1kUloOi3JWbV-ukH1OfpvN-S5lKt2_VND', '1Fh6eRGpc3vAWJjwPdk85RXuK6C6NRB1Y')
 
