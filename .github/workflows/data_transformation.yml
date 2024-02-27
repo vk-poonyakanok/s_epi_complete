@@ -6,11 +6,10 @@ on:
     - cron: '0 0 5 1 *' # Schedules the job to run at 00:00 UTC on January 5th every year
 
 jobs:
-  automate_transform_yearly_data:
+  automate-task:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
       - name: Set up Python
         uses: actions/setup-python@v3
