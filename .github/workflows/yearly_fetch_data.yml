@@ -26,6 +26,6 @@ jobs:
         shell: bash
 
       - name: Run Script
-        run: python yearly_fetch_data.py
+        run: python yearly_fetch_data2.py
         env:
           GOOGLE_APPLICATION_CREDENTIALS: ${{ github.workspace }}/gcp_service_account.json
