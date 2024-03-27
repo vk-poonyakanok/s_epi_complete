@@ -1,4 +1,6 @@
 # VaxMap Thailand project
+
+## [Click here to view on Tableau Public](https://public.tableau.com/app/profile/vitchakorn.poonyakanok/viz/EPIMapThailand/s-epi-complete)
  
 ## Overview
 The `VaxMap Thailand` is the personal project that aims to analyze and visualize the coverage of vaccines received by children aged 1 year in Thailand, as per the guidelines which consists of BCG, HB1, DTP-HB3, OPV3, IPV and MMR1. This project will leverage data primarily from the Ministry of Public Health's Open Data platform to evaluate vaccination coverage, map hospital locations, and provide insights through an interactive dashboard.
